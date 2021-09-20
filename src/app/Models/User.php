@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'username',
+        'access_id',
+        'full_name',
         'email',
         'password',
     ];
@@ -41,4 +43,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function gravatar($size=150){
+        return  "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $this->email ) ) ) . "?d=mp&s=" . $size;
+    }
+    public function access(){
+        return $this->belongsTo(Acces::class);
+    }
+    public function wallet(){
+        return $this->hasOne(Wallet::class);
+    }
+    public function rfid(){
+        return $this->HasOneThrough(Rfid::class, Wallet::class,'user_id','wallet_id');
+    }
+    // public function rfid(){
+    //     return $this->hasOne(Rfid::class);
+    // }
 }
