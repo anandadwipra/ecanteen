@@ -35,7 +35,7 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     Route::get('Prestasi',[AboutController::class,'prestasi'])->name('prestasi');
     // Wallet 
     Route::get('Wallet',[WalletController::class,'index'])->name('wallet');
-    Route::get('Userman/add',[DashboardController::class,'usermanAdd'])->name('userman.add');
+    Route::get('Wallet/{user}',[WalletController::class,'setup'])->name('wallet.setup');
     Route::post('Userman/add',[DashboardController::class,'usermanStore'])->name('userman.store');
 
 });

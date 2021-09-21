@@ -51,11 +51,16 @@
                             <input class="form-control" id="full_name" placeholder="Enter Full Name" name='full_name'
                                 value='{{$user->full_name}}'>
                         </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" disabled class="form-control" id='address' placeholder="Enter Email"
+                                value='{{$user->wallet->address??'WALLET NOT FOUND !!!'}}'>
+                        </div>
                         @if($user->access_id==3)
                         <div class="form-group">
                             <label for="rfid">RFID</label>
                             <input type="text" disabled class="form-control" id='rfid' placeholder="Enter Email"
-                                value='{{$user->rfid->rfid}}'>
+                                value='{{$user->rfid->rfid??'RFID NOT FOUND !!!'}}'>
                         </div>
                         @endif
                         <div class="form-group">

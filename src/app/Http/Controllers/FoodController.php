@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Wallet;
+use App\Models\Food;
 use Illuminate\Http\Request;
 
-class WalletController extends Controller
+class FoodController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,21 +14,9 @@ class WalletController extends Controller
      */
     public function index()
     {
-        $title="Wallet";
-        if (is_null(auth()->user()->wallet)) {
-            return view('panel.wallet.setup');
-        }else{
-            return view('panel.wallet.index',compact('title'));
-        }
+        //
     }
-    public function setup(User $user){
-        if (is_null(auth()->user()->wallet)) {
-            $user->wallet()->create(['address'=>\Str::random(10),'balance'=>"0.000"]);    
-        }else{
-            return redirect()->route('panel.wallet');
-        }
-        
-    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -54,10 +41,10 @@ class WalletController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function show(Wallet $wallet)
+    public function show(Food $food)
     {
         //
     }
@@ -65,10 +52,10 @@ class WalletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wallet $wallet)
+    public function edit(Food $food)
     {
         //
     }
@@ -77,10 +64,10 @@ class WalletController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Wallet $wallet)
+    public function update(Request $request, Food $food)
     {
         //
     }
@@ -88,10 +75,10 @@ class WalletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Food  $food
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wallet $wallet)
+    public function destroy(Food $food)
     {
         //
     }

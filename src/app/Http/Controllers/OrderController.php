@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\Wallet;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class WalletController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,21 +14,9 @@ class WalletController extends Controller
      */
     public function index()
     {
-        $title="Wallet";
-        if (is_null(auth()->user()->wallet)) {
-            return view('panel.wallet.setup');
-        }else{
-            return view('panel.wallet.index',compact('title'));
-        }
+        //
     }
-    public function setup(User $user){
-        if (is_null(auth()->user()->wallet)) {
-            $user->wallet()->create(['address'=>\Str::random(10),'balance'=>"0.000"]);    
-        }else{
-            return redirect()->route('panel.wallet');
-        }
-        
-    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -54,10 +41,10 @@ class WalletController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Wallet $wallet)
+    public function show(Order $order)
     {
         //
     }
@@ -65,10 +52,10 @@ class WalletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Wallet $wallet)
+    public function edit(Order $order)
     {
         //
     }
@@ -77,10 +64,10 @@ class WalletController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Wallet $wallet)
+    public function update(Request $request, Order $order)
     {
         //
     }
@@ -88,10 +75,10 @@ class WalletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Wallet  $wallet
+     * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Wallet $wallet)
+    public function destroy(Order $order)
     {
         //
     }
