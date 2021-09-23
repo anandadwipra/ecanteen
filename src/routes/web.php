@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CanteenController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\WalletController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,8 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     // Wallet 
     Route::get('Wallet',[WalletController::class,'index'])->name('wallet');
     Route::get('Wallet/{user}',[WalletController::class,'setup'])->name('wallet.setup');
-    Route::post('Userman/add',[DashboardController::class,'usermanStore'])->name('userman.store');
+    // Canteen 
+    Route::get('Canteen',[CanteenController::class,'index'])->name('canteen');
+    Route::post('Canteen/{user}',[CanteenController::class,'setup'])->name('canteen.setup');
 
 });

@@ -45,7 +45,7 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>1<sup style="font-size: 20px">%</sup></h3>
 
                         <p>Bounce Rate</p>
                     </div>
@@ -93,7 +93,7 @@
             <div class="col-lg-6">
                 <div class="card  card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Collapsible Card Example</h3>
+                        <h3 class="card-title">User Static</h3>
                         <div class="card-tools">
                             <!-- Collapse Button -->
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -112,7 +112,7 @@
             <div class="col-lg-6">
                 <div class="card  card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Collapsible Card Example</h3>
+                        <h3 class="card-title">User Static V2</h3>
                         <div class="card-tools">
                             <!-- Collapse Button -->
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -204,13 +204,13 @@
     var ctx = document.getElementById('myChart');
     const data = {
   labels: [
-    'Red',
-    'Blue',
-    'Yellow'
+    'Admin',
+    'Penjual',
+    'Siswa'
   ],
   datasets: [{
     label: 'My First Dataset',
-    data: [300, 50, 100],
+    data: [{{$user->find(1)->users->count()}}, {{$user->find(2)->users->count()}}, {{$user->find(3)->users->count()}}],
     backgroundColor: [
       'rgb(255, 99, 132)',
       'rgb(54, 162, 235)',

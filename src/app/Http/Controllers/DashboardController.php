@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Acces;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -17,12 +17,19 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }  
+    public function check(){
+        if(auth()->user()->access_id!=1){
+            return abort(403);
+        }
+    }
     public function index()
     {
-        return view('panel.dashboard');
+        $user=new Acces();
+        return view('panel.dashboard',compact('user'));
     }
     public function userman()
     {
+        $this->check();
         $title="Userman";
         $users= User::get();
         return view('panel.userman',compact(['title','users']));
@@ -37,6 +44,7 @@ class DashboardController extends Controller
         //
     }
     public function usermanAdd(){
+        $this->check();
         $title="Add User";
         return view('panel.usermanAdd',compact('title'));
     }
@@ -51,6 +59,7 @@ class DashboardController extends Controller
         //
     }
     public function usermanStore(Request $request){
+        $this->check();
         $request->validate([
             'username'=>'required',
             'full_name'=> 'required',
@@ -74,6 +83,7 @@ class DashboardController extends Controller
         //
     }
     public function usermanShow(User $user){
+        $this->check();
         // return Auth::;
         $title="Show";
         return view('panel.usermanShow',compact(['title','user']));
@@ -101,6 +111,7 @@ class DashboardController extends Controller
         //
     }
     public function usermanUpdate(Request $request, User $user){
+        $this->check();
         $request->validate([
             'username'=>'required',
             'full_name'=> 'required',
@@ -130,6 +141,13 @@ class DashboardController extends Controller
         //
     }
     public function usermanDestroy(User $user){
+        $this->check();
+        try {
+            $user->wallet->delete();
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        
         $user->delete();
         return redirect()->route('panel.userman');
     }

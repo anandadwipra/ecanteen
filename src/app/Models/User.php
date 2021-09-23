@@ -55,6 +55,9 @@ class User extends Authenticatable
     public function rfid(){
         return $this->HasOneThrough(Rfid::class, Wallet::class,'user_id','wallet_id');
     }
+    public function canteen(){
+        return $this->hasOne(Canteen::class);
+    }
     // public function rfid(){
     //     return $this->hasOne(Rfid::class);
     // }

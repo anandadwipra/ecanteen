@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Canteen;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CanteenController extends Controller
@@ -14,7 +15,12 @@ class CanteenController extends Controller
      */
     public function index()
     {
-        //
+        $title="Canteen";
+        if (is_null(auth()->user()->canteen)) {
+            return view('panel.canteen.setup');
+        }else{
+            return view('panel.canteen.index',compact('title'));
+        }
     }
 
     /**
@@ -33,9 +39,18 @@ class CanteenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function setup(Request $request)
     {
-        //
+        $request->validate([
+            'image'=>'required|image|mimes:jpg,png,jpeg|max:2048',
+            'name'=>'required',
+        ]);
+        $image=$request->file("image");
+        $image=$image->store("public/image/canteen");
+        $canteen=$request->all();
+        $canteen['image']=str_replace('public/image/',"image/",$image);
+        Auth()->user()->canteen()->create($canteen);
+        return redirect()->route('panel.canteen');
     }
 
     /**

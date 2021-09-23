@@ -24,6 +24,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
+
         <div class="col-md-12">
             <div class="card card-success">
                 <div class="card-header">
@@ -54,7 +55,6 @@
                         <div class="col-md-4">
                             <div class=" info-box">
                                 <span class="info-box-icon bg-primary"><i class="fas fa-address-card"></i></span>
-
                                 <div class="info-box-content">
                                     <span class="info-box-text">Address</span>
                                     <span class="info-box-number">{{Auth()->user()->wallet->address}}</span>
@@ -66,7 +66,6 @@
                         <div class="col-md-4">
                             <div class=" info-box">
                                 <span class="info-box-icon bg-success"><i class="fas fa-money-bill-wave"></i></span>
-
                                 <div class="info-box-content">
                                     <span class="info-box-text">Balance</span>
                                     <span class="info-box-number">Rp.{{Auth()->user()->wallet->balance}}</span>
@@ -78,7 +77,6 @@
                         <div class="col-md-4">
                             <div class=" info-box">
                                 <span class="info-box-icon bg-danger"><i class="fas fa-money-bill"></i></span>
-
                                 <div class="info-box-content">
                                     <span class="info-box-text">CashOut</span>
                                     <span class="info-box-number">Rp.{{Auth()->user()->wallet->balance}}</span>
@@ -93,7 +91,6 @@
                         <div class="col-md-4">
                             <div class=" info-box">
                                 <span class="info-box-icon bg-danger"><i class="fas fa-credit-card"></i></span>
-
                                 <div class="info-box-content">
                                     <span class="info-box-text">RFID</span>
                                     @if(is_null(Auth()->user()->rfid))
@@ -107,6 +104,46 @@
                             <!-- /.info-box -->
                         </div>
                     </div>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+
+        <div class="col-md-12">
+            <div class="card card-primary collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Money Report</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    The body of the card
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+
+        <div class="col-md-12">
+            <div class="card card-primary collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Money Report V2</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    The body of the card
                 </div>
                 <!-- /.card-body -->
             </div>

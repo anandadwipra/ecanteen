@@ -289,8 +289,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('panel.userman')}}"
-                                        class="nav-link {{(Route::current()->getName()==='panel.userman')? 'active':''}}">
+                                    <a href="{{route('panel.canteen')}}"
+                                        class="nav-link {{(Route::current()->getName()==='panel.canteen')? 'active':''}}">
                                         <div class="col-md-12">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-10">

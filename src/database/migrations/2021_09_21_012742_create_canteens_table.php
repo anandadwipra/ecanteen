@@ -18,8 +18,9 @@ class CreateCanteensTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->foreignId('user_id');
-            $table->enum('makanan', [0, 1]);
-            $table->enum('minuman', [0, 1]);
+            $table->string('image');
+            $table->enum('makanan', [0, 1])->default(0);
+            $table->enum('minuman', [0, 1])->default(1);
             $table->timestamps();
         });
     }
