@@ -17,7 +17,7 @@ class CreateFoodTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('harga');
+            $table->string('price');
             $table->integer('stock');
             $table->enum('jenis',['makana','minuman']);
             $table->string('image');

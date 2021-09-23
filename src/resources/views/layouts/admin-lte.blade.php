@@ -278,7 +278,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('panel.canteen.explore')}}"
+                                        class="nav-link  {{(Route::current()->getName()==='panel.canteen.explore')? 'active':''}}">
                                         <div class="col-md-12">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-10">

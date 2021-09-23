@@ -19,7 +19,8 @@ class CanteenController extends Controller
         if (is_null(auth()->user()->canteen)) {
             return view('panel.canteen.setup');
         }else{
-            return view('panel.canteen.index',compact('title'));
+            $food=auth()->user()->canteen->food;
+            return view('panel.canteen.index',compact(['title','food']));
         }
     }
 
@@ -51,6 +52,28 @@ class CanteenController extends Controller
         $canteen['image']=str_replace('public/image/',"image/",$image);
         Auth()->user()->canteen()->create($canteen);
         return redirect()->route('panel.canteen');
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'image'=>'required|image|mimes:jpg,png,jpeg|max:2048',
+            'name'=>'required',
+            'price'=>'required',
+            'stock'=>'required',
+            'jenis'=>'required',
+        ]);
+        $image=$request->file("image");
+        $image=$image->store("public/image/canteen/food");
+        $canteen=$request->all();
+        $canteen['image']=str_replace('public/image/',"image/",$image);
+        Auth()->user()->canteen->food()->create($canteen);
+        return redirect()->route('panel.canteen');
+    }
+
+    public function explore(){
+        $title="Explore Canteen";
+        $canteen=Canteen::all();
+        return view('panel.canteen.explore',compact('canteen'));
     }
 
     /**
