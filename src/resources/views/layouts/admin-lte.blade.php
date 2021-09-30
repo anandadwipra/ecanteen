@@ -305,17 +305,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         @else
                         <li class="nav-item menu-item">
+                            @if(Auth()->user()->access->id == 1)
                             <a href="#" class="nav-link">
                                 {{-- <i class="nav-icon fas fa-th"></i> --}}
                                 <i class="nav-icon  fas fa-store"></i>
                                 <p>
-                                    @if(Auth()->user()->access->id == 1)
                                     Canteen Manager
-                                    @else
-                                    Canteen
-                                    @endif
                                 </p>
                             </a>
+                            @else
+                            <a href="{{route('panel.canteen.explore')}}" class="nav-link">
+                                {{-- <i class="nav-icon fas fa-th"></i> --}}
+                                <i class="nav-icon  fas fa-store"></i>
+                                <p>
+                                    Canteen
+                            </p>
+                            </a>
+                            @endif
                         </li>
                         @endif
 

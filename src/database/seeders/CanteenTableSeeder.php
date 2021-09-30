@@ -21,6 +21,7 @@ class CanteenTableSeeder extends Seeder
             'makanan'=>1,
             'minuman'=>1,
             'image'=>'image/canteen/canteen.png',
+            // 'image'=>'canteen.png',
         ]);
     }
 }

@@ -31,14 +31,22 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-1 col-12 "></div>
-            @foreach ($canteen as $ca)
+            @foreach ($food as $fo)
             <div class="col-md-3 col-12">
                 <div class="row">
-                    <div class="card a" style="width: 18rem;"  onclick="javascript:location.href='{{route('panel.canteen.show',['canteen'=>$ca->id])}}'">
-                        <img height="200" width="auto" src="{{asset('storage/'.$ca->image)}}"
+                    <div class="card a" style="width: 18rem;"  onclick="javascript:location.href='{{route('panel.canteen.show',['canteen'=>$fo->id])}}'">
+                        <img height="200" width="auto" src="{{asset('storage/'.$fo->image)}}"
                             class="rounded mx-auto d-block card-img-top" alt="Responsive image">
                         <div class="card-body">
-                            <h3 class="card-text text-center">{{$ca->name;}}</h3>
+                                <h3 class="card-text text-center">{{$fo->name;}}</h3>
+                                <div class="row">
+                                    <div class="col-md-6 col-12">
+                                        <h4 class="text-left">{{$fo->stock}}</h4>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <h4 class="text-right">Rp.{{$fo->price}}</h4>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>

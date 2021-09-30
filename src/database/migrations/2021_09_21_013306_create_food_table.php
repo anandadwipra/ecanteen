@@ -19,7 +19,7 @@ class CreateFoodTable extends Migration
             $table->string('slug')->unique();
             $table->string('price');
             $table->integer('stock');
-            $table->enum('jenis',['makana','minuman']);
+            $table->enum('jenis',['makanan','minuman']);
             $table->string('image');
             $table->foreignId('canteen_id');
             $table->timestamps();

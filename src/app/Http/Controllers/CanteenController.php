@@ -17,6 +17,9 @@ class CanteenController extends Controller
     {
         $title="Canteen";
         if (is_null(auth()->user()->canteen)) {
+            if(is_null(auth()->user()->wallet)){
+                return view('panel.wallet.setup');
+            }
             return view('panel.canteen.setup');
         }else{
             $food=auth()->user()->canteen->food;
@@ -73,7 +76,7 @@ class CanteenController extends Controller
     public function explore(){
         $title="Explore Canteen";
         $canteen=Canteen::all();
-        return view('panel.canteen.explore',compact('canteen'));
+        return view('panel.canteen.explore',compact(['canteen','title']));
     }
 
     /**
@@ -84,7 +87,10 @@ class CanteenController extends Controller
      */
     public function show(Canteen $canteen)
     {
-        //
+        $title="Explore $canteen->name";
+        $food=$canteen->food->all();
+        // dd($food);
+        return view('panel.canteen.show',compact(['food','title']));
     }
 
     /**

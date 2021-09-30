@@ -25,6 +25,7 @@ class WalletController extends Controller
     public function setup(User $user){
         if (is_null(auth()->user()->wallet)) {
             $user->wallet()->create(['address'=>\Str::random(10),'balance'=>"0.000"]);    
+            return redirect()->route('panel.wallet');
         }else{
             return redirect()->route('panel.wallet');
         }
