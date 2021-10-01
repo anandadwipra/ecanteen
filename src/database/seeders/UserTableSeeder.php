@@ -42,5 +42,12 @@ class UserTableSeeder extends Seeder
             'access_id'=>3,
             'password'=>bcrypt('password')
         ]);
+        User::create([
+            'full_name'=>'Pak Kantin',
+            'username'=>'Pk',
+            'email'=>'pakKantin@gmail.com',
+            'access_id'=>2,
+            'password'=>bcrypt('password')
+        ]);
     }
 }

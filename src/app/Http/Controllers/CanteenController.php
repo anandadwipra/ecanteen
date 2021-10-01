@@ -26,6 +26,10 @@ class CanteenController extends Controller
             return view('panel.canteen.index',compact(['title','food']));
         }
     }
+    public function beli(Request $request)
+    {
+        dd($request['beli']);
+    }
 
     /**
      * Show the form for creating a new resource.

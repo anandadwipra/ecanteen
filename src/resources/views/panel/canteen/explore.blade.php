@@ -5,6 +5,11 @@
     .a:hover {
         cursor: pointer;
     }
+    .imagebro{
+        /* width: 100%; */
+        max-height: 20vh;
+
+    }
 </style>
 @endsection
 @section('content')
@@ -30,20 +35,25 @@
 <section class="content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-1 col-12 "></div>
+            <!-- ./col -->
             @foreach ($canteen as $ca)
-            <div class="col-md-3 col-12">
-                <div class="row">
-                    <div class="card a" style="width: 18rem;"  onclick="javascript:location.href='{{route('panel.canteen.show',['canteen'=>$ca->id])}}'">
-                        <img height="200" width="auto" src="{{asset('storage/'.$ca->image)}}"
-                            class="rounded mx-auto d-block card-img-top" alt="Responsive image">
-                        <div class="card-body">
-                            <h3 class="card-text text-center">{{$ca->name;}}</h3>
-                        </div>
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-primary">
+                    <div class="inner">
+                        <h3>{{$ca->name}}</h3>
+
+                        <p>{{$ca->user->full_name}}</p>
                     </div>
+                    <div class="row">
+                        <img class='imagebro mx-auto mb-2' src="{{asset('storage/'.$ca->image)}}"
+                    class="rounded mx-auto d-block card-img-top" alt="Responsive image">
+                    </div>
+                    <a href="{{route('panel.canteen.show',['canteen'=>$ca->id])}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             @endforeach
+            <!-- ./col -->
         </div>
     </div>
 </section>

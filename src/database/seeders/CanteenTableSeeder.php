@@ -23,5 +23,13 @@ class CanteenTableSeeder extends Seeder
             'image'=>'image/canteen/canteen.png',
             // 'image'=>'canteen.png',
         ]);
+        Canteen::create([
+            'name'=>'Kantin Bapak',
+            'user_id'=>'5',
+            'makanan'=>1,
+            'minuman'=>0,
+            'image'=>'image/canteen/QT2BnJQnKlRO66fbrvlIvYwr2JuW9rk5cBbkL4Jz.png',
+            // 'image'=>'canteen.png',
+        ]);
     }
 }
