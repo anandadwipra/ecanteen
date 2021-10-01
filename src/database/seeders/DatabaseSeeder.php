@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
                 $this->call(WalletTableSeeder::class);
                 $this->call(RfidTableSeeder::class);
                 $this->call(CanteenTableSeeder::class);
+                $this->call(FoodTableSeeder::class);
     }
 }

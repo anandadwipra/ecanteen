@@ -15,6 +15,11 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('canteen_id');
+            $table->string('food_list');
+            $table->string('total');
+            $table->boolean('payment')->default(0);
             $table->timestamps();
         });
     }

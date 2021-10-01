@@ -20,7 +20,7 @@ class FoodTableSeeder extends Seeder
             'stock' => 5,
             'jenis' => 'makanan',
             'image' => 'image/canteen/food/JRKqSYzEmqZ4ux3uyyTqC6yViw5rYLe6m18T1O4k.png',
-            'canteen-id' => 2,
+            'canteen_id' => 2,
         ]);
         Food::create([
             'name' => 'Burger',
@@ -28,7 +28,7 @@ class FoodTableSeeder extends Seeder
             'stock' => 8,
             'jenis' => 'makanan',
             'image' => 'image/canteen/food/mFxXAU4stL5UXAyWuHXMaqPTL6fC8HIlHXYxFXKP.png',
-            'canteen-id' => 2,
+            'canteen_id' => 2,
         ]);
         Food::create([
             'name' => 'Bakso',
@@ -36,7 +36,7 @@ class FoodTableSeeder extends Seeder
             'stock' => 10,
             'jenis' => 'makanan',
             'image' => 'image/canteen/food/6piAQXOeF72QSO5AYh37oIE07jUx0G5HN6z6cHhV.png',
-            'canteen-id' => 1,
+            'canteen_id' => 1,
         ]);
         Food::create([
             'name' => 'es',
@@ -44,7 +44,7 @@ class FoodTableSeeder extends Seeder
             'stock' => 8,
             'jenis' => 'makanan',
             'image' => 'image/canteen/food/Rx1mVqU59zfWKZ6DiBcC14PCTwxFOexR9ziEo6Yj.png',
-            'canteen-id' => 1,
+            'canteen_id' => 1,
         ]);
     }
 }

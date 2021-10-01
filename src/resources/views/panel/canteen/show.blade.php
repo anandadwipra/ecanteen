@@ -99,10 +99,12 @@
         </div>
         <div class="row">
                 <div class="col-md-2 col-12"></div>
-                <form action="{{route('panel.canteen.beli')}}" method="post">
+                <form action="{{route('panel.canteen.beli')}}" method="post" class="col-md-8 col-12">
                     @csrf
-                    <input type="text" name="beli" id="beli">
-                <button type="submit" class="btn btn-primary col-md-8 col-12">Beli</button>
+                    <input type="text" name="food_list" id="beli" hidden value="x">
+                    <input type="text" name="total" id="totalx" hidden value="x">
+                    <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
+                <button type="submit" class="btn btn-primary col-md-12">Beli</button>
                 <div class="col-md-2 col-12"></div>
             </form>
         </div>
@@ -126,6 +128,8 @@
                     arrowr[i].parentElement.getElementsByClassName('total')[0].innerText=parseInt(arrowl[i].parentElement.getElementsByClassName('total')[0].innerText)+1;
                     document.getElementsByClassName('totalHarga')[0].innerText=parseInt(arrowl[i].parentElement.parentElement.getElementsByClassName('harga')[0].innerText)+parseInt(document.getElementsByClassName('totalHarga')[0].innerText)   
                     
+                    document.querySelector('#totalx').value=document.getElementsByClassName('totalHarga')[0].innerText
+
                     beli.push(arrowr[i].parentElement.getElementsByClassName('idv')[0].innerText);
                     document.querySelector('#beli').value=beli.toString()
                     // console.log(beli)
@@ -138,6 +142,8 @@
                 var beli=(document.querySelector('#beli').value).split(',')
                 arrowl[i].parentElement.getElementsByClassName('total')[0].innerText=parseInt(arrowl[i].parentElement.getElementsByClassName('total')[0].innerText)-1;
                 document.getElementsByClassName('totalHarga')[0].innerText=parseInt(document.getElementsByClassName('totalHarga')[0].innerText)-parseInt(arrowl[i].parentElement.parentElement.getElementsByClassName('harga')[0].innerText)
+
+                document.querySelector('#totalx').value=document.getElementsByClassName('totalHarga')[0].innerText
 
                 var index=beli.indexOf(arrowr[i].parentElement.getElementsByClassName('idv')[0].innerText)
                 beli.splice(index, 1);

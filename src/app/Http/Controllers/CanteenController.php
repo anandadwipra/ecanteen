@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Canteen;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,13 @@ class CanteenController extends Controller
     }
     public function beli(Request $request)
     {
-        dd($request['beli']);
+        $request->validate([
+            'food_list'=>'required',
+            'total'=>'required',
+        ]);
+        $req=$request->all();
+        $req['user_id']=auth()->user()->id;
+        Order::create($req);
     }
 
     /**
