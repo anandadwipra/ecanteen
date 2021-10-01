@@ -121,7 +121,66 @@
             </div>
             <!-- /.card-body -->
         </div>
+
+        <div class="col-md-12">
+            <div class="card card-primary collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Order</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    
+
+
+
+
+
+
+                    <table class="table table-hover">
+                        <a class="btn btn-primary" href="{{route('panel.userman.add')}}" role="button">Tambah</a>
+                        <br><br>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                {{-- <th scope="col">Full Name</th> --}}
+                                <th scope="col">Food_list</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">Wallet Address</th>
+                                {{-- <th scope="col">Last Login</th> --}}
+                                <th scope="col">Modify</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($food[0]->canteen->orders as $oder)
+                            
+                            @endforeach
+                        </tbody>
+                    </table>
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+
         <!-- /.card -->
+
     </div>
     </div>
 </section>

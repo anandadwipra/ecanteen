@@ -45,5 +45,6 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     Route::get('Canteen/{canteen}',[CanteenController::class,'show'])->name('canteen.show');
     Route::post('Canteen',[CanteenController::class,'beli'])->name('canteen.beli');
 
+    Route::get('Canteen/api/{rfid:rfid}',[CanteenController::class,'pay']);
 
 });

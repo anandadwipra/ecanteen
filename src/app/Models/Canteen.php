@@ -25,4 +25,7 @@ class Canteen extends Model
     public function food(){
         return $this->hasMany(Food::class);
     }
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
 }

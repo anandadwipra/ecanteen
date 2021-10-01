@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Canteen;
 use App\Models\Order;
+use App\Models\Rfid;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -83,7 +84,13 @@ class CanteenController extends Controller
         Auth()->user()->canteen->food()->create($canteen);
         return redirect()->route('panel.canteen');
     }
+    public function pay(Rfid $rfid){
+        $rfid->wallet->user->myorders->payment=1;
+        $rfid->wallet->user->myorders->save();
+        
+        dd($rfid->wallet->user->full_name,$rfid->wallet->user->myorders->payment);
 
+    }
     public function explore(){
         $title="Explore Canteen";
         $canteen=Canteen::all();

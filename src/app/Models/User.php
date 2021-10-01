@@ -58,6 +58,9 @@ class User extends Authenticatable
     public function canteen(){
         return $this->hasOne(Canteen::class);
     }
+    public function myorders(){
+        return $this->hasMany(Order::class);
+    }
     // public function rfid(){
     //     return $this->hasOne(Rfid::class);
     // }
