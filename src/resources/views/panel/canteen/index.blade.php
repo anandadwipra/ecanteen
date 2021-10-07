@@ -135,7 +135,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    
+
 
 
 
@@ -149,29 +149,17 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                {{-- <th scope="col">Full Name</th> --}}
-                                <th scope="col">Food_list</th>
-                                <th scope="col">Total</th>
+                                <th scope="col">Total_Price</th>
                                 <th scope="col">Wallet Address</th>
+                                <th scope="col">Pay</th>
                                 {{-- <th scope="col">Last Login</th> --}}
                                 <th scope="col">Modify</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach ($food[0]->canteen->orders as $oder)
-                            
-                            @endforeach
+                        <tbody id="contentTable">
+
                         </tbody>
                     </table>
-
-
-
-
-
-
-
-
-
 
                 </div>
                 <!-- /.card-body -->
@@ -247,5 +235,50 @@
 </div>
 @endsection
 @section('js')
+<script>
+    var table= document.getElementById('contentTable');
+    var xhr = new XMLHttpRequest();
+    var url = "http://127.0.0.1:8000/panel/Canteen/orders";
+    xhr.onreadystatechange = function(){
+        var div= document.createElement('div');
+        if(this.readyState == 4 && this.status == 200){
+            responsene=JSON.parse(this.responseText);
+        responsene.forEach((element,index) => {
+            let myTr = document.createElement("tr");	
+            let myTh = document.createElement("th");	
+            
+            myTh.innerText = index+1;		
+            myTr.appendChild(myTh)
 
+            myTh = document.createElement("td");	
+            myTh.innerText = element['full_name'];		
+            myTr.appendChild(myTh)
+
+            myTh = document.createElement("td");	
+            myTh.innerText = element['total'];		
+            myTr.appendChild(myTh);            
+
+            myTh = document.createElement("td");	
+            myTh.innerText = element['address'];		
+            myTr.appendChild(myTh)
+
+            myTh = document.createElement("td");
+
+            if (element['payment'] == 1 ) {
+                myTh.innerText = "Lunas";
+            }else{
+                myTh.innerText = "Belum Lunas";
+            }
+            myTr.appendChild(myTh);
+            div.appendChild(myTr);
+        });
+        table.innerHTML=div.outerHTML;
+        }
+    };
+
+    setInterval(function(){
+        xhr.open("GET", url, true);
+        xhr.send();
+    },2000);
+</script>
 @endsection

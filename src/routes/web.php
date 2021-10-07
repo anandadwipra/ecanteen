@@ -42,6 +42,7 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     Route::post('Canteen/{user}',[CanteenController::class,'setup'])->name('canteen.setup');
     Route::post('Canteen/add/{user}',[CanteenController::class,'store'])->name('canteen.add');
     Route::get('Canteen/explore',[CanteenController::class,'explore'])->name('canteen.explore');
+    Route::get('Canteen/orders',[CanteenController::class,'order'])->name('canteen.order');
     Route::get('Canteen/{canteen}',[CanteenController::class,'show'])->name('canteen.show');
     Route::post('Canteen',[CanteenController::class,'beli'])->name('canteen.beli');
 
