@@ -2,20 +2,23 @@
 @section('css')
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <style>
-    .imagebro{
+    .imagebro {
         /* width: 100%; */
         max-height: 20vh;
 
     }
-    .imagebro2{
+
+    .imagebro2 {
         /* width: 100%; */
         max-height: 10vh;
 
     }
-    .arrow:hover{
+
+    .arrow:hover {
         cursor: pointer;
     }
-    .abc{
+
+    .abc {
         position: fixed;
         bottom: 0%;
         z-index: 1000;
@@ -73,7 +76,7 @@
                     </div>
                     <div class="row">
                         <img class='imagebro mx-auto mb-2' src="{{asset('storage/'.$fo->image)}}"
-                    class="rounded mx-auto d-block card-img-top" alt="Responsive image">
+                            class="rounded mx-auto d-block card-img-top" alt="Responsive image">
                     </div>
                     <div class="row mb-4">
                         <div class="col"></div>
@@ -98,17 +101,19 @@
             {{-- @endfor --}}
         </div>
         <div class="row">
-                <div class="col-md-2 col-12"></div>
-                <form action="{{route('panel.canteen.beli')}}" method="post" class="col-md-8 col-12">
-                    @csrf
-                    <input type="text" name="food_list" id="beli" hidden value="x">
-                    <input type="text" name="total" id="totalx" hidden value="x">
-                    <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
-                <button type="submit" class="btn btn-primary col-md-12">Beli</button>
+            <div class="col-md-2 col-12"></div>
+            <form action="{{route('panel.canteen.beli')}}" method="post" class="col-md-8 col-12">
+                @csrf
+                <input type="text" name="food_list" id="beli" hidden value="x">
+                <input type="text" name="total" id="totalx" hidden value="x">
+                <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
+                <button type={{(Auth()->user()->myorders->where('payment','=','0')->count()>0)?"button":"submit"}}
+                    onclick="{{Auth()->user()->myorders->where('payment','=','0')->count()>0?'aler()':''}}"
+                    class="btn btn-primary col-md-12">Beli</button>
                 <div class="col-md-2 col-12"></div>
             </form>
         </div>
-           
+
     </div>
 </section>
 @endsection
@@ -117,8 +122,9 @@
 @endsection
 @section('js')
 <script>
-
-
+    function aler(){
+        alert("Make sure you pay your Order !!");
+    }
     var arrowr=document.getElementsByClassName('arrowr');
     var arrowl=document.getElementsByClassName('arrowl');
     for(let i = 0; i < arrowr.length; i++){
