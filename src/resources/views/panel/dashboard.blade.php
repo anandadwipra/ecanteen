@@ -30,8 +30,11 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>150</h3>
-
+                        @if(Auth()->user()->access_id==2)
+                        <h3>{{Auth()->user()->canteen->orders->where('payment','=','0')->count()}}</h3>
+                        @else
+                        <h3>0</h3>
+                        @endif
                         <p>New Orders</p>
                     </div>
                     <div class="icon">
@@ -45,12 +48,15 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>1<sup style="font-size: 20px">%</sup></h3>
-
-                        <p>Bounce Rate</p>
+                        @if(Auth()->user()->access_id==2)
+                        <h3>{{Auth()->user()->canteen->orders->count()}}</h3>
+                        @else
+                        <h3>0</h3>
+                        @endif
+                        <p>Total Orders</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
+                        <i class="ion ion-bag"></i>
                     </div>
                     <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>

@@ -30,8 +30,11 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
+                        @if(Auth()->user()->access_id==2)
+                        <h3>1</h3>
+                        @else
                         <h3>150</h3>
-
+                        @endif
                         <p>New Orders</p>
                     </div>
                     <div class="icon">
