@@ -1,4 +1,5 @@
 # E-canteen
+![](https://img.shields.io/github/license/anandadwipra/ecanteen?style=for-the-badge)![](https://img.shields.io/github/repo-size/anandadwipra/ecanteen?style=for-the-badge)![](https://img.shields.io/github/languages/count/anandadwipra/ecanteen?style=for-the-badge)![](https://img.shields.io/github/last-commit/anandadwipra/ecanteen?style=for-the-badge)
 
 Recreate Project Ecanteen,Project ini adalah pembuatan ulang dari Project E-canteen yang mana sebelumnya Pernah dibuat pada tahun 2020.
 
