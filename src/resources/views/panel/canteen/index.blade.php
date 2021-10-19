@@ -238,7 +238,7 @@
 <script>
     var table= document.getElementById('contentTable');
     var xhr = new XMLHttpRequest();
-    var url = "{{route('panel.canteen.order')}}"
+    var url = "{{route('api.canteen.order')}}"
     xhr.onreadystatechange = function(){
         var div= document.createElement('div');
         if(this.readyState == 4 && this.status == 200){

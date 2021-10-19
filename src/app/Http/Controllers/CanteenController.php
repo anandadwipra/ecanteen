@@ -88,11 +88,19 @@ class CanteenController extends Controller
         Auth()->user()->canteen->food()->create($canteen);
         return redirect()->route('panel.canteen');
     }
-    public function pay(Rfid $rfid){
-        $rrfid=$rfid->wallet->user->myorders->last();
+    public function pay($rfid){
+        $rfid2=Rfid::where('rfid',$rfid)->first();
+        if(! $rfid2){
+            return "  Card invalid";
+        }
+        $rrfid=$rfid2->wallet->user->myorders->last();
+        if($rrfid->payment==1){
+            return "     No tax";
+        }
         $rrfid->payment=1;
         $rrfid->save();
-        return "Pembayaran Berhasil";
+        #        return $rfid2->wallet->user->full_name;
+        return "    Success";
     }
     public function explore(){
         $title="Explore Canteen";

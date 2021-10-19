@@ -17,8 +17,9 @@ use App\Http\Controllers\CanteenController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('api/canteen/{rfid:rfid}',[CanteenController::class,'pay']);
-Route::get('tes',function (){
-    return "tes";
-});
+Route::get('canteen/{rfid:rfid}',[CanteenController::class,'pay']);
+Route::get('eror',function(){
+    return view('panel.eror.usernotfound');
+})->name('usernotfound');
+Route::get('Canteen/orders',[CanteenController::class,'order'])->name('api.canteen.order');
 

@@ -1,0 +1,1 @@
+Kartu tidak terdaftar !!!
