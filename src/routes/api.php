@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CanteenController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('api/canteen/{rfid:rfid}',[CanteenController::class,'pay']);
+Route::get('tes',function (){
+    return "tes";
+});
+

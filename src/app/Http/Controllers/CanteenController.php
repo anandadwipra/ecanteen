@@ -37,6 +37,7 @@ class CanteenController extends Controller
         $req=$request->all();
         $req['user_id']=auth()->user()->id;
         Order::create($req);
+        return redirect()->route('panel.canteen.explore');
     }
     public function order(){
         return Order::join('users', 'orders.user_id', '=', 'users.id')->join('wallets', 'orders.user_id', '=', 'wallets.user_id')->select('orders.*','users.full_name','wallets.*')->get();
@@ -91,7 +92,7 @@ class CanteenController extends Controller
         $rrfid=$rfid->wallet->user->myorders->last();
         $rrfid->payment=1;
         $rrfid->save();
-        dd('oke');
+        return "Pembayaran Berhasil";
     }
     public function explore(){
         $title="Explore Canteen";
