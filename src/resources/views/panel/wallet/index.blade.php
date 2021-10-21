@@ -88,6 +88,19 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4"></div>
+                        @if (Auth()->user()->access_id==1)
+                        <div class="col-md-4">
+                            <div class=" info-box">
+                                <span class="info-box-icon bg-warning"><i class="fas fa-credit-card"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Fix Money</span>
+                                    <span class="info-box-number">Rp.{{App\Models\FixMoney::first()->Money}}, Rp.{{App\Models\FixMoney::total()}}</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div> 
+                        @else 
                         <div class="col-md-4">
                             <div class=" info-box">
                                 <span class="info-box-icon bg-danger"><i class="fas fa-credit-card"></i></span>
@@ -96,20 +109,67 @@
                                     @if(is_null(Auth()->user()->rfid))
                                     <span class="info-box-number">RFID TIDAK TERSEDIA UNTUK ANDA</span>
                                     @else
-                                    <span class="info-box-number">Rp.{{Auth()->user()->rfid->rfid}}</span>
+                                    <span class="info-box-number">{{Auth()->user()->rfid->rfid}}</span>
                                     @endif
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
                             <!-- /.info-box -->
                         </div>
+                        @endif
                     </div>
+                    
                 </div>
                 <!-- /.card-body -->
             </div>
             <!-- /.card -->
         </div>
-
+        <div class="col-md-12">
+            <div class="card card-primary collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Order History</h3>
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table class="table table-hover">
+                        
+                        <br><br>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Canteen</th>
+                                <th scope="col">Wallet Address</th>
+                                <th scope="col">Total_Price</th>
+                                <th scope="col">Order Status</th>
+                                {{-- <th scope="col">Last Login</th> --}}
+                                <th scope="col">Date And Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contentTable">
+                            @foreach ($orders as $order)
+                            <tr>
+                                <td scope="col">{{$loop->index+1}}</td>
+                                <td scope="col">{{$order->canteen->name}}</td>
+                                <td scope="col">{{$order->canteen->user->wallet->address}}</td>
+                                <td scope="col">{{$order->total}}</td>
+                                <td scope="col">{{$order->payment==1?"Success":"Pending"}}</td>
+                                {{-- <td scope="col">Last Login</td> --}}
+                                <td scope="col">{{$order->created_at}} </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
         <div class="col-md-12">
             <div class="card card-primary collapsed-card">
                 <div class="card-header">

@@ -94,9 +94,13 @@ class CanteenController extends Controller
             return "  Card invalid";
         }
         $rrfid=$rfid2->wallet->user->myorders->last();
-        if($rrfid->payment==1){
-            return "     No tax";
-        }
+        if(! is_null($rrfid)){
+            if($rrfid->payment==1){
+                return "     No tax";
+            }
+    }else{
+        return "     No tax";
+    }
         $rrfid->payment=1;
         $rrfid->save();
         #        return $rfid2->wallet->user->full_name;

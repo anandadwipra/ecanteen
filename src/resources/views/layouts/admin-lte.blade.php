@@ -242,6 +242,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="{{route('panel.userman')}}"
+                                        class="nav-link {{(Route::current()->getName()==='panel.userman')? 'active':''}}">
+                                        <div class="col-md-12">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-10">
+                                                <i class=" fas fa-users-cog nav-icon"></i>
+                                                <p>UserMan</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <div class="col-md-12">
                                             <div class="col-md-2"></div>
@@ -254,12 +266,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{route('panel.userman')}}"
-                                        class="nav-link {{(Route::current()->getName()==='panel.userman')? 'active':''}}">
+                                        class="nav-link {{(Route::current()->getName()==='panel.usermanTopUp')? 'active':''}}">
                                         <div class="col-md-12">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-10">
-                                                <i class=" fas fa-users-cog nav-icon"></i>
-                                                <p>UserMan</p>
+                                                <i class=" fas fa-dollar-sign nav-icon"></i>
+                                                <p>Top Up</p>
                                             </div>
                                         </div>
                                     </a>
@@ -314,7 +326,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                             @else
-                            <a href="{{route('panel.canteen.explore')}}" class="nav-link">
+                            <a href="{{route('panel.canteen.explore')}}" class="nav-link {{(Route::current()->getName()==='panel.canteen.explore')? 'active':''}}">
                                 {{-- <i class="nav-icon fas fa-th"></i> --}}
                                 <i class="nav-icon  fas fa-store"></i>
                                 <p>

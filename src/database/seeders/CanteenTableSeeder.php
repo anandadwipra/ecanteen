@@ -25,7 +25,7 @@ class CanteenTableSeeder extends Seeder
         ]);
         Canteen::create([
             'name'=>'Kantin Bapak',
-            'user_id'=>'5',
+            'user_id'=>'3',
             'makanan'=>1,
             'minuman'=>1,
             'image'=>'image/canteen/QT2BnJQnKlRO66fbrvlIvYwr2JuW9rk5cBbkL4Jz.png',
