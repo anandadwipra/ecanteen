@@ -7,6 +7,7 @@
     }
     .imagebro{
         /* width: 100%; */
+        height: 10vh;
         max-height: 20vh;
 
     }

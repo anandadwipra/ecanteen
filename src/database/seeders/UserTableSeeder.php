@@ -15,38 +15,38 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'full_name'=>'Admin Joss',
-            'username'=>'Admin',
+            'full_name'=>'Ananda Dwi',
+            'username'=>'Ananda',
             'email'=>'anandabiru04@gmail.com',
             'access_id'=>1,
             'password'=>bcrypt('password')
         ]);
         User::create([
-            'full_name'=>'Om Warteg',
-            'username'=>'Ow',
-            'email'=>'OmWarteg@gmail.com',
+            'full_name'=>'Devi Kurnia',
+            'username'=>'Devi',
+            'email'=>'Devi@gmail.com',
             'access_id'=>2,
             'password'=>bcrypt('password')
         ]);
         User::create([
-            'full_name'=>'Si Gendut',
-            'username'=>'Sg',
-            'email'=>'SiGendut@gmail.com',
-            'access_id'=>3,
-            'password'=>bcrypt('password')
-        ]);
-        User::create([
-            'full_name'=>'Si Rakus',
-            'username'=>'Sr',
-            'email'=>'SiRakus@gmail.com',
-            'access_id'=>3,
-            'password'=>bcrypt('password')
-        ]);
-        User::create([
-            'full_name'=>'Pak Kantin',
-            'username'=>'Pk',
-            'email'=>'pakKantin@gmail.com',
+            'full_name'=>'Arif Maulana',
+            'username'=>'Arif',
+            'email'=>'Arif@gmail.com',
             'access_id'=>2,
+            'password'=>bcrypt('password')
+        ]);
+        User::create([
+            'full_name'=>'Firman Arifin',
+            'username'=>'Firman',
+            'email'=>'Firman@gmail.com',
+            'access_id'=>3,
+            'password'=>bcrypt('password')
+        ]);
+        User::create([
+            'full_name'=>'Reza Ferdiana',
+            'username'=>'Reza',
+            'email'=>'Rezaferdiana@gmail.com',
+            'access_id'=>3,
             'password'=>bcrypt('password')
         ]);
     }

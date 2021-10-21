@@ -22,22 +22,22 @@ class WalletTableSeeder extends Seeder
         Wallet::create([
             'address'=>'AD587WFR',
             'user_id'=>2,
-            'balance'=>'700.000'
+            'balance'=>'200.000'
         ]);
         Wallet::create([
             'address'=>'F478TY4F',
             'user_id'=>3,
-            'balance'=>'100.000'
+            'balance'=>'150.000'
         ]);
         Wallet::create([
             'address'=>'Q477ERT7',
             'user_id'=>4,
-            'balance'=>'30.00'
+            'balance'=>'100.000'
         ]);
         Wallet::create([
             'address'=>'D47AZRT7',
             'user_id'=>5,
-            'balance'=>'0'
+            'balance'=>'50.000'
         ]);
     }
 }

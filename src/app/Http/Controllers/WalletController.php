@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\User;
 use App\Models\Wallet;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class WalletController extends Controller
         if (is_null(auth()->user()->wallet)) {
             return view('panel.wallet.setup');
         }else{
-            return view('panel.wallet.index',compact('title'));
+            $orders= Order::where('user_id',3)->get();
+            // dd($orders);
+            return view('panel.wallet.index',compact(['title','orders']));
         }
     }
     public function setup(User $user){
