@@ -20,8 +20,7 @@ class WalletController extends Controller
         if (is_null(auth()->user()->wallet)) {
             return view('panel.wallet.setup');
         }else{
-            $orders= Order::where('user_id',3)->get();
-            // dd($orders);
+            $orders= Order::where('user_id',auth()->user()->id)->get();
             return view('panel.wallet.index',compact(['title','orders']));
         }
     }

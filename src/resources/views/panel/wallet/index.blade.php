@@ -88,6 +88,19 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4"></div>
+                        @if (Auth()->user()->access_id==1)
+                        <div class="col-md-4">
+                            <div class=" info-box">
+                                <span class="info-box-icon bg-warning"><i class="fas fa-credit-card"></i></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Fix Money</span>
+                                    <span class="info-box-number">Rp.{{App\Models\FixMoney::first()->Money}}, Rp.{{App\Models\FixMoney::total()}}</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div> 
+                        @else 
                         <div class="col-md-4">
                             <div class=" info-box">
                                 <span class="info-box-icon bg-danger"><i class="fas fa-credit-card"></i></span>
@@ -103,7 +116,9 @@
                             </div>
                             <!-- /.info-box -->
                         </div>
+                        @endif
                     </div>
+                    
                 </div>
                 <!-- /.card-body -->
             </div>
