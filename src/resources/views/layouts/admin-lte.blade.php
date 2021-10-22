@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> {{$title ?? 'Dashboard'}} | E-Canteen</title>
-    <link href='{{ asset('img/cheff.ico') }}' rel='icon' type='image/x-icon' />
+    <link href='{{ asset(' img/cheff.ico') }}' rel='icon' type='image/x-icon' />
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     @yield('css')
 </head>
@@ -222,8 +222,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li> --}}
                         <li class="nav-item menu-item">
-                            <a href="{{route('panel.dashboard')}}"
-                                class="nav-link {{(Route::current()->getName()==="panel.dashboard")? 'active':''}}">
+                            <a href="{{route('panel.dashboard')}}" class="nav-link {{(Route::current()->getName()==="
+                                panel.dashboard")? 'active' :''}}">
                                 {{-- <i class="nav-icon fas fa-th"></i> --}}
                                 <i class="nav-icon  fas fa-tachometer-alt"></i>
                                 <p>
@@ -265,8 +265,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('panel.userman')}}"
-                                        class="nav-link {{(Route::current()->getName()==='panel.usermanTopUp')? 'active':''}}">
+                                    <a href="{{route('panel.userman.topup')}}"
+                                        class="nav-link {{(Route::current()->getName()==='panel.userman.topup')? 'active':''}}">
                                         <div class="col-md-12">
                                             <div class="col-md-2"></div>
                                             <div class="col-md-10">
@@ -326,7 +326,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                             @else
-                            <a href="{{route('panel.canteen.explore')}}" class="nav-link {{(Route::current()->getName()==='panel.canteen.explore')? 'active':''}}">
+                            <a href="{{route('panel.canteen.explore')}}"
+                                class="nav-link {{(Route::current()->getName()==='panel.canteen.explore')? 'active':''}}">
                                 {{-- <i class="nav-icon fas fa-th"></i> --}}
                                 <i class="nav-icon  fas fa-store"></i>
                                 <p>

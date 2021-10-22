@@ -30,6 +30,10 @@ class DashboardController extends Controller
         $modal['description']="Selamat datang,Kami menunggu anda";
         return view('panel.dashboard',compact(["user","modal"]));
     }
+    public function usermanTopup()
+    {
+        return view('panel.usermanTopup');
+    }
     public function userman()
     {
         $this->check();
