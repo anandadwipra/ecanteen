@@ -94,7 +94,8 @@
                                 <span class="info-box-icon bg-warning"><i class="fas fa-credit-card"></i></span>
                                 <div class="info-box-content">
                                     <span class="info-box-text">Fix Money</span>
-                                    <span class="info-box-number">Rp.{{App\Models\FixMoney::first()->Money}}, Rp.{{App\Models\FixMoney::total()}}</span>
+                                    <span class="info-box-number">Rp.{{App\Models\FixMoney::total()}}</span>
+                                    {{-- <span class="info-box-number">Rp.{{App\Models\FixMoney::first()->Money}}, Rp.{{App\Models\FixMoney::total()}}</span> --}}
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
