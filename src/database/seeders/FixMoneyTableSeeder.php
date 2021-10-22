@@ -14,6 +14,6 @@ class FixMoneyTableSeeder extends Seeder
      */
     public function run()
     {
-            FixMoney::create(['Money'=>'1.000.000']);
+            FixMoney::create(['Money'=>'1000000']);
     }
 }

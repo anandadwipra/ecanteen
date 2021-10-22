@@ -64,9 +64,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- ./col -->
-            {{-- @for ($i = 0; $i < 2; $i++) --}}
-            @foreach ($food as $fo)
-            <div class="col-lg-3 col-6">
+            {{-- @for ($i = 0; $i < 2; $i++) --}} @foreach ($food as $fo) <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box">
                     <div class="inner">
@@ -96,23 +94,23 @@
                         <i class="fas fa-angle-right fa-4x col-md-3 arrowr"></i>
                     </div>
                 </div>
-            </div>
-            @endforeach
-            {{-- @endfor --}}
         </div>
-        <div class="row">
+        @endforeach
+        {{-- @endfor --}}
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-12"></div>
+        <form action="{{route('panel.canteen.beli')}}" method="post" class="col-md-8 col-12">
+            @csrf
+            <input type="text" name="food_list" id="beli" hidden value="x">
+            <input type="text" name="total" id="totalx" hidden value="x">
+            <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
+            <button type={{(Auth()->user()->myorders->where('payment','=','0')->count()>0)?"button":"submit"}}
+                onclick="{{Auth()->user()->myorders->where('payment','=','0')->count()>0?'aler()':''}}"
+                class="btn btn-primary col-md-12">Beli</button>
             <div class="col-md-2 col-12"></div>
-            <form action="{{route('panel.canteen.beli')}}" method="post" class="col-md-8 col-12">
-                @csrf
-                <input type="text" name="food_list" id="beli" hidden value="x">
-                <input type="text" name="total" id="totalx" hidden value="x">
-                <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
-                <button type={{(Auth()->user()->myorders->where('payment','=','0')->count()>0)?"button":"submit"}}
-                    onclick="{{Auth()->user()->myorders->where('payment','=','0')->count()>0?'aler()':''}}"
-                    class="btn btn-primary col-md-12">Beli</button>
-                <div class="col-md-2 col-12"></div>
-            </form>
-        </div>
+        </form>
+    </div>
 
     </div>
 </section>
@@ -122,23 +120,38 @@
 @endsection
 @section('js')
 <script>
+    wallet={{Auth()->user()->wallet->balance}}
     function aler(){
         alert("Make sure you pay your Order !!");
+    }
+    function invalid(){
+        alert("Your money is not enough !!");
     }
     var arrowr=document.getElementsByClassName('arrowr');
     var arrowl=document.getElementsByClassName('arrowl');
     for(let i = 0; i < arrowr.length; i++){
         arrowr[i].addEventListener("click", function(){
                 if(parseInt(arrowr[i].parentElement.parentElement.getElementsByClassName('stock')[0].innerText)!=parseInt(arrowr[i].parentElement.getElementsByClassName('total')[0].innerText)){
+                    
+                    if(parseInt(arrowl[i].parentElement.parentElement.getElementsByClassName('harga')[0].innerText)+parseInt(document.getElementsByClassName('totalHarga')[0].innerText)>wallet){
+                        invalid();
+                    }else{
+
+
+
                     var beli=(document.querySelector('#beli').value).split(',')
                     arrowr[i].parentElement.getElementsByClassName('total')[0].innerText=parseInt(arrowl[i].parentElement.getElementsByClassName('total')[0].innerText)+1;
                     document.getElementsByClassName('totalHarga')[0].innerText=parseInt(arrowl[i].parentElement.parentElement.getElementsByClassName('harga')[0].innerText)+parseInt(document.getElementsByClassName('totalHarga')[0].innerText)   
                     
+
                     document.querySelector('#totalx').value=document.getElementsByClassName('totalHarga')[0].innerText
 
                     beli.push(arrowr[i].parentElement.getElementsByClassName('idv')[0].innerText);
                     document.querySelector('#beli').value=beli.toString()
                     // console.log(beli)
+                    }
+
+
                 }
         });
     };
