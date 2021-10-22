@@ -30,10 +30,18 @@ class CanteenController extends Controller
     }
     public function beli(Request $request)
     {
+        $canteen=Canteen::find($request->canteen_id)->user->wallet;
+        $total=(int)$request->total;
         $request->validate([
             'food_list'=>'required',
             'total'=>'required',
         ]);
+        $wallet=auth()->user()->wallet;
+        $canteen->balance=strval(($canteen->balance)+$total);
+        $wallet->balance=strval(($wallet->balance)-$total);
+        $canteen->save();
+        $wallet->save();
+
         $req=$request->all();
         $req['user_id']=auth()->user()->id;
         Order::create($req);

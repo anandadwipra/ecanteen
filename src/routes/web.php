@@ -29,11 +29,12 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     Route::get('Userman',[DashboardController::class,'userman'])->name('userman');
     Route::get('Userman/add',[DashboardController::class,'usermanAdd'])->name('userman.add');
     Route::post('Userman/add',[DashboardController::class,'usermanStore'])->name('userman.store');
+    Route::get('Userman/topup',[DashboardController::class,'usermanTopup'])->name('userman.topup');
     Route::get('Userman/{user}',[DashboardController::class,'usermanShow'])->name('userman.show');
     Route::patch('Userman/{user}',[DashboardController::class,'usermanUpdate'])->name('userman.update');
     Route::delete('Userman/{user}',[DashboardController::class,'usermanDestroy'])->name('userman.delete');
-    Route::get('Aktivitas',[AboutController::class,'aktivitas'])->name('aktv');
-    Route::get('Prestasi',[AboutController::class,'prestasi'])->name('prestasi');
+    // Route::get('Aktivitas',[AboutController::class,'aktivitas'])->name('aktv');
+    // Route::get('Prestasi',[AboutController::class,'prestasi'])->name('prestasi');
     // Wallet 
     Route::get('Wallet',[WalletController::class,'index'])->name('wallet');
     Route::get('Wallet/{user}',[WalletController::class,'setup'])->name('wallet.setup');

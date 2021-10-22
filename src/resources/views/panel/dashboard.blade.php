@@ -146,12 +146,13 @@
 </button>
 
 <!-- Modal -->
+@if(isset($modal))
 <div class="modal fade" id="AccesLevel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login Success</h5>
+                <h5 class="modal-title" id="exampleModalLabel">{{$modal["title"]}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -164,10 +165,10 @@
                     </div>
                     <br>
                     <div class="row">
-                        <h4 class='text-center col-md-12 text-capitalize'><b>{{ Auth()->user()->access->name}}</b></h4>
+                        <h4 class='text-center col-md-12 text-capitalize'><b>{{$modal['subtitle']}}</b></h4>
                     </div>
                     <div class="row">
-                        <h5 class='text-center col-md-12'>Selamat datang,kami menunggu anda disini</h5>
+                        <h5 class='text-center col-md-12'>{{$modal["description"]}}</h5>
                     </div>
                 </div>
             </div>
@@ -183,6 +184,7 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
@@ -205,7 +207,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script>
+    @if(session()->has('title'))
     document.getElementById('btn-acc').click()
+    @endif
     // chart1
     var ctx = document.getElementById('myChart');
     const data = {

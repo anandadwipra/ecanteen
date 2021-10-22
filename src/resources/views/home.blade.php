@@ -199,9 +199,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/helpers.esm.min.js"
     integrity="sha512-b3xZ1Eh852+/Ltha4XJd59YP2d+I+B6NPdB4H+Wns29GX9x5pLwlp8jnQtJYog3d5Xk1SWvhT2lgJDDBvpV0ow=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <script>
-    document.getElementById('btn-acc').click()
+
     // chart1
     var ctx = document.getElementById('myChart');
     const data = {

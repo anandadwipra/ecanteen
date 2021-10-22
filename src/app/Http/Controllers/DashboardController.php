@@ -25,7 +25,14 @@ class DashboardController extends Controller
     public function index()
     {
         $user=new Acces();
-        return view('panel.dashboard',compact('user'));
+        $modal['title']="Login Success";
+        $modal['subtitle']=auth()->user()->access->name;
+        $modal['description']="Selamat datang,Kami menunggu anda";
+        return view('panel.dashboard',compact(["user","modal"]));
+    }
+    public function usermanTopup()
+    {
+        return view('panel.usermanTopup');
     }
     public function userman()
     {
