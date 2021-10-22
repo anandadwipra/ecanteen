@@ -8,12 +8,6 @@
 
     }
 
-    .imagebro2 {
-        /* width: 100%; */
-        max-height: 10vh;
-
-    }
-
     .arrow:hover {
         cursor: pointer;
     }
@@ -23,6 +17,23 @@
         bottom: 0%;
         z-index: 1000;
     }
+
+    .roww
+    {
+        display: flex;
+        align-items: center;
+        flex-direction: row !important;
+        margin-bottom: 32px;
+    }
+
+    @media (max-width: 768px)
+    {
+        .mobile-hidden
+        {
+            display: none;
+        }
+    }
+
 </style>
 <meta name="_token" content="{{ csrf_token() }}">
 @endsection
@@ -64,7 +75,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- ./col -->
-            {{-- @for ($i = 0; $i < 2; $i++) --}} @foreach ($food as $fo) <div class="col-lg-3 col-6">
+            {{-- @for ($i = 0; $i < 2; $i++) --}} @foreach ($food as $fo) <div class="col-xl-4  col-md-6 col-12">
                 <!-- small box -->
                 <div class="small-box">
                     <div class="inner">
@@ -76,7 +87,7 @@
                         <img class='imagebro mx-auto mb-2' src="{{asset('storage/'.$fo->image)}}"
                             class="rounded mx-auto d-block card-img-top" alt="Responsive image">
                     </div>
-                    <div class="row mb-4">
+                    <div class="roww mb-4">
                         <div class="col"></div>
                         <h4 class="col-md-3">Rp. <span class="harga">{{$fo->price}}</span></h4>
                         <div class="col"></div>
@@ -84,12 +95,12 @@
                         <div class="col"></div>
                         <h4 class="col-md-3 stock">{{$fo->stock}}</h4>
                     </div>
-                    <div class="row">
+                    <div class="roww">
                         <div class="idv" hidden>{{$fo->id}}</div>
-                        <div class="col"></div>
+                        <div class="col mobile-hidden"></div>
                         <i class="fas fa-angle-left fa-4x col-md-3 arrowl"></i>
                         <div class="col"></div>
-                        <h3 class="col-md-3 total">0</h3>
+                        <h3 class="col-md-2 total">0</h3>
                         <div class="col"></div>
                         <i class="fas fa-angle-right fa-4x col-md-3 arrowr"></i>
                     </div>

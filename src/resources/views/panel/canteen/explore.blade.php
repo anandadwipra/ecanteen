@@ -9,7 +9,11 @@
         /* width: 100%; */
         height: 10vh;
         max-height: 20vh;
-
+    }
+    .small-box
+    {
+        padding: 20px;
+        margin-bottom: 40px;
     }
 </style>
 @endsection
@@ -38,7 +42,7 @@
         <div class="row">
             <!-- ./col -->
             @foreach ($canteen as $ca)
-            <div class="col-lg-3 col-6">
+            <div class="col-xl-4  col-md-6 col-12">
                 <!-- small box -->
                 <div class="small-box bg-primary">
                     <div class="inner">
