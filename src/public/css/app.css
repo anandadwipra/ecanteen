@@ -33191,7 +33191,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   pointer-events: none;
 }
 
-.small-box {
+
   border-radius: 0.25rem;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
   display: block;
@@ -33207,7 +33207,7 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   background-color: rgba(0, 0, 0, 0.1);
   color: rgba(255, 255, 255, 0.8);
   display: block;
-  padding: 3px 0;
+  padding: 8px 0;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -67996,4 +67996,13 @@ readers do not read off random characters that represent icons */
 .fab {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
+}
+
+/* Explore Blade*/
+img.imagebro
+{
+  min-width: 200px;
+  min-height: 200px !important;
+  object-fit: cover;
+  margin-bottom: 20px !important;
 }
