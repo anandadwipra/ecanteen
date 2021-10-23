@@ -34,6 +34,20 @@ class DashboardController extends Controller
     {
         return view('panel.usermanTopup');
     }
+    public function usermanTopuppost(Request $request)
+    {
+        $request->validate([
+            'id'=>'required',
+            'rupiah'=> 'required',
+        ]);
+        $wallet=User::find($request->id)->wallet;
+        $balance=(int)$request->rupiah;
+        $wallet->balance=strval($wallet->balance+$balance);
+        $wallet->save();
+        return redirect()->route('panel.userman.topup');
+    }
+
+
     public function userman()
     {
         $this->check();

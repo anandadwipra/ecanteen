@@ -30,6 +30,7 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     Route::get('Userman/add',[DashboardController::class,'usermanAdd'])->name('userman.add');
     Route::post('Userman/add',[DashboardController::class,'usermanStore'])->name('userman.store');
     Route::get('Userman/topup',[DashboardController::class,'usermanTopup'])->name('userman.topup');
+    Route::post('Userman/topup',[DashboardController::class,'usermanTopuppost'])->name('userman.topuppost');
     Route::get('Userman/{user}',[DashboardController::class,'usermanShow'])->name('userman.show');
     Route::patch('Userman/{user}',[DashboardController::class,'usermanUpdate'])->name('userman.update');
     Route::delete('Userman/{user}',[DashboardController::class,'usermanDestroy'])->name('userman.delete');
@@ -46,6 +47,7 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     //    Route::get('Canteen/orders',[CanteenController::class,'order'])->name('canteen.order');
     Route::get('Canteen/{canteen}',[CanteenController::class,'show'])->name('canteen.show');
     Route::post('Canteen',[CanteenController::class,'beli'])->name('canteen.beli');
+
 
 //    Route::get('Canteen/api/{rfid:rfid}',[CanteenController::class,'pay']);
 
