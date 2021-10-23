@@ -1,6 +1,19 @@
 @extends('layouts.admin-lte')
 @section('css')
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<style>
+    @media(max-width: 1000px)
+    {
+        .card-body
+        {
+            overflow: auto;
+        }
+        .table
+        {
+            min-width: 600px;
+        }
+    }
+</style>
 @endsection
 @section('content')
 <!-- Content Header (Page header) -->
