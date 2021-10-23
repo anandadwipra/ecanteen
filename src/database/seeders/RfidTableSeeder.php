@@ -17,11 +17,11 @@ class RfidTableSeeder extends Seeder
         
         Rfid::create([
             'wallet_id'=>4,
-            'rfid'=>"10399190167"
+            'rfid'=>"14724619025"
         ]);
         Rfid::create([
             'wallet_id'=>5,
-            'rfid'=>"31711526"
+            'rfid'=>"2431215525"
         ]);
     }
 }
