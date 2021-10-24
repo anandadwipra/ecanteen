@@ -1,6 +1,16 @@
 @extends('layouts.admin-lte')
 @section('css')
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<style>
+        .container-fluid
+        {
+            overflow: auto !important;
+        }
+        .table
+        {
+            min-width: 600px !important;
+        }
+</style>
 @endsection
 @section('content')
 <!-- Content Header (Page header) -->
