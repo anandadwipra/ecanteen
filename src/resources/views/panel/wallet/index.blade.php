@@ -51,8 +51,7 @@
                     <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
-                <div class="card-body">
-                    <br><br>
+                <div class="card-body py-5">
                     <div class="row">
                         <div class="col-md-4">
                             <h3><b>Hi {{Auth()->user()->full_name}} !!<b></h3>
@@ -152,8 +151,6 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table class="table table-hover">
-                        
-                        <br><br>
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
