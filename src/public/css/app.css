@@ -68006,3 +68006,91 @@ img.imagebro
   object-fit: cover;
   margin-bottom: 20px !important;
 }
+
+/* Pop Up COD/Dompetku */
+.popup_box
+{
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+}
+.popup_box
+{
+  user-select: none;
+  width: 400px;
+  background: #f2f2f2;
+  text-align: center;
+  align-items: center;
+  padding: 40px;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+}
+.popup_box i
+{
+  font-size: 60px;
+  color: #eb9477;
+  border: 4px solid #eb9477;
+  padding: 20px;
+  border-radius: 50%;
+  margin: -10px 0 20px;
+}
+.popup_box h2
+{
+  font-size: 24px;
+  color: #1b2631;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.popup_box label
+{
+  font-size: 18px;
+  color: #404040;
+}
+.popup_box .btn_popup
+{
+  margin-top: 20px;
+}
+.popup_box .btn_popup .btn_cod, .popup_box .btn_popup .btn_dompetku
+{
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.popup_box .btn_popup .btn_cod
+{
+  background: #999999;
+  border: 1px solid #808080;
+}
+.popup_box .btn_popup .btn_dompetku
+{
+  background: #3490dc;
+  margin-left: 10px;
+  border: 1px solid #0059b3;
+}
+.popup_box .btn_popup .btn_cod:hover
+{
+  transition: 0.5s;
+  background: #8c8c8c;
+}
+.popup_box .btn_popup .btn_dompetku:hover
+{
+  transition: 0.5s;
+  background: #227dc7;
+}
+
+@media (max-width: 420px)
+{
+  .popup_box
+  {
+    width: calc(100% - 28px);
+    padding: 32px;
+  }
+}

@@ -118,7 +118,19 @@
             <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
             <button type={{(Auth()->user()->myorders->where('payment','=','0')->count()>0)?"button":"submit"}}
                 onclick="{{Auth()->user()->myorders->where('payment','=','0')->count()>0?'aler()':''}}"
-                class="btn btn-primary col-md-12">Beli</button>
+                class="btn btn-primary col-md-12 click">Beli</button>
+
+            <!-- Pop Up COD/Dompetku -->
+            <div class="popup_box">
+                <i class="fas fa-wallet"></i>
+                <h2>Pilih Metode Pembayaran</h2>
+                <label>Mau bayar di tempat (COD) atau bayar dengan saldo Dompetku?</label>
+                <div class="btn_popup">
+                    <a href="#" class="btn_cod">Bayar COD</a>
+                    <a href="#" class="btn_dompetku">Dompetku</a>
+                </div>
+            </div>
+
             <div class="col-md-2 col-12"></div>
         </form>
     </div>
