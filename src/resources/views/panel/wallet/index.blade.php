@@ -181,7 +181,7 @@
             </div>
             <!-- /.card -->
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 no-padding">
             <div class="card card-primary collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Money Report</h3>
@@ -201,7 +201,7 @@
             <!-- /.card -->
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 no-padding">
             <div class="card card-primary collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Money Report V2</h3>
