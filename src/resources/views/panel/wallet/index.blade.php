@@ -4,13 +4,16 @@
 <style>
     @media(max-width: 1000px)
     {
-        .card-body
+        table
         {
-            overflow: auto;
+            display: flex;
+            justify-content: space-between;
         }
-        .table
+        tr
         {
-            min-width: 600px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
     }
 </style>
@@ -153,11 +156,11 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Canteen</th>
+                                <th scope="col">Nomor</th>
+                                <th scope="col">Kantin</th>
                                 <th scope="col">Wallet Address</th>
-                                <th scope="col">Total_Price</th>
-                                <th scope="col">Order Status</th>
+                                <th scope="col">Total Harga</th>
+                                <th scope="col">Status</th>
                                 {{-- <th scope="col">Last Login</th> --}}
                                 <th scope="col">Date And Time</th>
                             </tr>
