@@ -45,13 +45,6 @@
             <div class="card card-success">
                 <div class="card-header">
                     <h3 class="card-title">Your Wallet Information</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body py-5">
@@ -141,15 +134,9 @@
             <!-- /.card -->
         </div>
         <div class="col-md-12 no-padding">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Order History</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-plus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -185,15 +172,9 @@
             <!-- /.card -->
         </div>
         <div class="col-md-12 no-padding">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Money Report</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-plus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -205,15 +186,9 @@
         </div>
 
         <div class="col-md-12 no-padding">
-            <div class="card card-primary collapsed-card">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Money Report V2</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-plus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
