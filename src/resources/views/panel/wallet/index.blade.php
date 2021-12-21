@@ -4,13 +4,16 @@
 <style>
     @media(max-width: 1000px)
     {
-        .card-body
+        table
         {
-            overflow: auto;
+            display: flex;
+            justify-content: space-between;
         }
-        .table
+        tr
         {
-            min-width: 600px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
     }
 </style>
@@ -38,17 +41,10 @@
 <section class="content">
     <div class="container-fluid">
 
-        <div class="col-md-12">
+        <div class="col-md-12 no-padding">
             <div class="card card-success">
                 <div class="card-header">
                     <h3 class="card-title">Your Wallet Information</h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-minus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body py-5">
@@ -137,27 +133,21 @@
             </div>
             <!-- /.card -->
         </div>
-        <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+        <div class="col-md-12 no-padding">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Order History</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-plus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Canteen</th>
+                                <th scope="col">Nomor</th>
+                                <th scope="col">Kantin</th>
                                 <th scope="col">Wallet Address</th>
-                                <th scope="col">Total_Price</th>
-                                <th scope="col">Order Status</th>
+                                <th scope="col">Total Harga</th>
+                                <th scope="col">Status</th>
                                 {{-- <th scope="col">Last Login</th> --}}
                                 <th scope="col">Date And Time</th>
                             </tr>
@@ -181,16 +171,10 @@
             </div>
             <!-- /.card -->
         </div>
-        <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+        <div class="col-md-12 no-padding">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Money Report</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-plus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -201,16 +185,10 @@
             <!-- /.card -->
         </div>
 
-        <div class="col-md-12">
-            <div class="card card-primary collapsed-card">
+        <div class="col-md-12 no-padding">
+            <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">Money Report V2</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                class="fas fa-plus"></i>
-                        </button>
-                    </div>
-                    <!-- /.card-tools -->
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">

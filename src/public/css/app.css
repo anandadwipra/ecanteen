@@ -68085,6 +68085,10 @@ img.imagebro
   transition: 0.5s;
   background: #227dc7;
 }
+.no-padding
+{
+  padding: unset;
+}
 
 @media (max-width: 420px)
 {
