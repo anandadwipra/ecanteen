@@ -68010,8 +68010,8 @@ img.imagebro
 /* Pop Up COD/Dompetku */
 .popup_box
 {
-  position: absolute;
-  top: -200px;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 4px;
