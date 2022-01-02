@@ -122,6 +122,7 @@
 
             <!-- Pop Up COD/Dompetku -->
             <div class="popup_box">
+                <img src="../img/close.png">
                 <i class="fas fa-wallet"></i>
                 <h2>Pilih Metode Pembayaran</h2>
                 <label>Mau bayar di tempat (COD) atau bayar dengan saldo Dompetku?</label>
