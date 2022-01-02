@@ -68031,6 +68031,8 @@ img.imagebro
 .popup_box img.close
 {
   position: absolute;
+  top: 0;
+  right: 0;
 }
 .popup_box i
 {
