@@ -68028,7 +68028,7 @@ img.imagebro
   pointer-events: none;
   transition: all 0.4s ease-in-out;
 }
-.popup_box .close
+.popup_box img.close
 {
   position: absolute;
 }
