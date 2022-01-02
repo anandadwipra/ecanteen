@@ -599,20 +599,4 @@ module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\Desktop\\
 /******/ })()
 ;
 
-$(document).ready(function()
-{
-  $('.click').click(function()
-  {
-    $('.popup_box').css(
-    {
-      "opacity":"1", "pointer-events":"auto"
-    });
-  });
-  $('.close').click(function()
-  {
-    $('.popup_box').css(
-    {
-      "opacity":"0", "pointer-events":"none"
-    });
-  });
-});
+

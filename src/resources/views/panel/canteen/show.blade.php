@@ -113,12 +113,10 @@
         <div class="col-md-2 col-12"></div>
         <form action="{{route('panel.canteen.beli')}}" method="post" class="col-md-8 col-12">
             @csrf
-            <input type="text" name="food_list" id="beli" hidden value="x">
+             <input type="text" name="food_list" id="beli" hidden value="x">
             <input type="text" name="total" id="totalx" hidden value="x">
             <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
-            <button type={{(Auth()->user()->myorders->where('payment','=','0')->count()>0)?"button":"submit"}}
-                onclick="{{Auth()->user()->myorders->where('payment','=','0')->count()>0?'aler()':''}}"
-                class="btn btn-primary col-md-12 click">Beli</button>
+            <button type="button" class="btn btn-primary col-md-12 click">Beli</button>
 
             <!-- Pop Up COD/Dompetku -->
             <div class="popup_box">
@@ -127,8 +125,8 @@
                 <h2>Pilih Metode Pembayaran</h2>
                 <label>Mau bayar di tempat (COD) atau bayar dengan saldo Dompetku?</label>
                 <div class="btn_popup">
-                    <a href="#" class="btn_cod">Bayar COD</a>
-                    <a href="#" class="btn_dompetku">Dompetku</a>
+                    <button type="button" class="btn_cod">Bayar COD</button>
+                    <button type={{(Auth()->user()->myorders->where('payment','=','0')->count()>0)?"button":"submit"}} onclick="{{Auth()->user()->myorders->where('payment','=','0')->count()>0?'aler()':''}}" class="btn_dompetku">Dompetku</button>
                 </div>
             </div>
 
@@ -144,6 +142,32 @@
 @endsection
 @section('js')
 <script>
+$(document).ready(function()
+{
+  $('.click').click(function()
+    {
+        if(parseInt(document.getElementsByClassName('totalHarga')['0'].innerText)==0){
+            alert("Make sure you choose Food");
+        }else{
+             $('.popup_box').css(
+            {
+              "opacity":"1", "pointer-events":"auto"
+            });
+        }
+    }
+)
+
+
+  $('.close').click(function()
+  {
+    $('.popup_box').css(
+    {
+      "opacity":"0", "pointer-events":"none"
+    });
+  });
+});
+
+
     wallet={{Auth()->user()->wallet->balance}}
     function aler(){
         alert("Make sure you pay your Order !!");
