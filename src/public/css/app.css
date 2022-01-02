@@ -68030,7 +68030,7 @@ img.imagebro
 }
 .popup_box .close
 {
-
+  position: absolute;
 }
 .popup_box i
 {
