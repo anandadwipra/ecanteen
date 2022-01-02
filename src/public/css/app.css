@@ -68010,14 +68010,11 @@ img.imagebro
 /* Pop Up COD/Dompetku */
 .popup_box
 {
-  position: absolute;
-  top: -200px;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 4px;
-}
-.popup_box
-{
   user-select: none;
   width: 400px;
   background: #f2f2f2;
@@ -68030,6 +68027,13 @@ img.imagebro
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s ease-in-out;
+}
+.popup_box img.close
+{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
 }
 .popup_box i
 {
