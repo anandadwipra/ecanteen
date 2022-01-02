@@ -68033,6 +68033,9 @@ img.imagebro
   position: absolute;
   top: 0;
   right: 0;
+  border: 1px solid #eb9477;
+  border-radius: 50%;
+  padding: 20px;
 }
 .popup_box i
 {
