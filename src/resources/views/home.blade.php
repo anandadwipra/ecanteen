@@ -135,23 +135,25 @@
 </section>
 @else
 
-<!-- Baik Mas -->
-<h4>Menu Terbaru</h4>
-<p>- Nama Makanan/Minuman</p>
-<p>- Gambar</p>
-<p>- Nama Kantin</p>
-<p>- Harga</p>
-<p>- Jumlah Orderan</p>
+<!-- Dashboard Menu -->
+<div class="dashboard-menu">
+    <h4>Menu Terbaru</h4>
+    <p>- Nama Makanan/Minuman</p>
+    <p>- Gambar</p>
+    <p>- Nama Kantin</p>
+    <p>- Harga</p>
+    <p>- Jumlah Orderan</p>
 
-<h4>Menu Terlaris</h4>
-<p>- Nama Makanan/Minuman</p>
-<p>- Gambar</p>
-<p>- Nama Kantin</p>
-<p>- Harga</p>
-<p>- Jumlah Orderan</p>
+    <h4>Menu Terlaris</h4>
+    <p>- Nama Makanan/Minuman</p>
+    <p>- Gambar</p>
+    <p>- Nama Kantin</p>
+    <p>- Harga</p>
+    <p>- Jumlah Orderan</p>
 
-<h4>Jumlah User Order</h4>
-<p>- Sekian Orang<p>
+    <h4>Jumlah User Order</h4>
+    <p>- Sekian Orang</p>
+</div>
 
 @endif
 @endsection
