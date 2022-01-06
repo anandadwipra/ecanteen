@@ -148,12 +148,14 @@
 
 <!-- Dashboard Menu -->
 <div class="dashboard-menu">
-    <h4>Menu Terbaru</h4>
-    <p>Telur Gulung</p>
-    <img src="{{asset('img/egg.png')}}">
-    <p>Kantin Bapak</p>
-    <p>Harga: Rp5.000</p>
-    <p>Total: 20 Pesanan</p>
+    <div class="card">
+        <h4>Menu Terbaru</h4>
+        <p>Telur Gulung</p>
+        <img src="{{asset('img/egg.png')}}">
+        <p>Kantin Bapak</p>
+        <p>Harga: Rp5.000</p>
+        <p>Total: 20 Pesanan</p>
+    </div>
 
     <h4>Menu Terbaru</h4>
     <p>Telur Gulung</p>
