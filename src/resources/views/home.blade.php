@@ -7,6 +7,10 @@
     {
         color: #3490dc;
     }
+    .dashboard-menu .card
+    {
+        width: 300px;
+    }
 </style>
 
 @extends('layouts.admin-lte')
