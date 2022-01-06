@@ -3,6 +3,10 @@
     {
         padding: 0 23px;
     }
+    .dashboard-menu h4
+    {
+        color: #3490dc;
+    }
 </style>
 
 @extends('layouts.admin-lte')
@@ -145,21 +149,21 @@
 <!-- Dashboard Menu -->
 <div class="dashboard-menu">
     <h4>Menu Terbaru</h4>
-    <p>- Nama Makanan/Minuman</p>
+    <p>Telur Gulung</p>
     <p>- Gambar</p>
-    <p>- Nama Kantin</p>
-    <p>- Harga</p>
-    <p>- Jumlah Orderan</p>
+    <p>Kantin Bapak</p>
+    <p>Harga: Rp5.000</p>
+    <p>Total: 20 Pesanan</p>
 
-    <h4>Menu Terlaris</h4>
-    <p>- Nama Makanan/Minuman</p>
+    <h4>Menu Terbaru</h4>
+    <p>Telur Gulung</p>
     <p>- Gambar</p>
-    <p>- Nama Kantin</p>
-    <p>- Harga</p>
-    <p>- Jumlah Orderan</p>
+    <p>Kantin Bapak</p>
+    <p>Harga: Rp5.000</p>
+    <p>Total: 20 Pesanan</p>
 
     <h4>Jumlah User Order</h4>
-    <p>- Sekian Orang</p>
+    <p>120 Orang</p>
 </div>
 
 @endif
