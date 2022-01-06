@@ -113,7 +113,7 @@
         <div class="col-md-2 col-12"></div>
         <form action="{{route('panel.canteen.beli')}}" method="post" class="col-md-8 col-12">
             @csrf
-             <input type="text" name="food_list" id="beli" hidden value="x">
+            <input type="text" name="food_list" id="beli" hidden value="x">
             <input type="text" name="total" id="totalx" hidden value="x">
             <input type="text" name="canteen_id" hidden value="{{$food[0]->canteen->id}}">
             <button type="button" class="btn btn-primary col-md-12 click">Beli</button>

@@ -6,6 +6,7 @@ use App\Models\Canteen;
 use App\Models\Order;
 use App\Models\Rfid;
 use App\Models\User;
+use App\Models\Food;
 use Illuminate\Http\Request;
 
 class CanteenController extends Controller
@@ -36,6 +37,14 @@ class CanteenController extends Controller
             'food_list'=>'required',
             'total'=>'required',
         ]);
+        $food_list=explode(",",$request['food_list']);
+        unset($food_list[0]);
+        foreach( $food_list as $value ){
+            $food=Food::find($value);
+            $food->stock=$food->stock-1;
+            $food->save();        
+                }
+
         $wallet=auth()->user()->wallet;
         $canteen->balance=strval(($canteen->balance)+$total);
         $wallet->balance=strval(($wallet->balance)-$total);
