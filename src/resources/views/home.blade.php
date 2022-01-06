@@ -1,3 +1,10 @@
+<style type="text/css">
+    .dashboard-menu
+    {
+        padding: 0 23px;
+    }
+</style>
+
 @extends('layouts.admin-lte')
 @section('css')
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
