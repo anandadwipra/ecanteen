@@ -20,7 +20,7 @@
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content-header -->
-
+@if(Auth()->user()->access_id!=3)
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
@@ -133,6 +133,13 @@
         </div>
     </div>
 </section>
+@else
+
+    <!-- Tulis code disini mas  -->
+
+    halaman siswa
+
+@endif
 @endsection
 @section('last')
 <!-- Button trigger modal -->
