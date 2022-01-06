@@ -7,10 +7,6 @@
     {
         color: #3490dc;
     }
-    .dashboard-menu .card
-    {
-        width: 300px;
-    }
 </style>
 
 @extends('layouts.admin-lte')
@@ -152,7 +148,7 @@
 
 <!-- Dashboard Menu -->
 <div class="dashboard-menu">
-    <div class="card">
+    <div class="card col-sm-4 col-6">
         <h4>Menu Terbaru</h4>
         <p>Telur Gulung</p>
         <img src="{{asset('img/egg.png')}}">
