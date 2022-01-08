@@ -3,9 +3,55 @@
     {
         padding: 0 23px;
     }
-    .dashboard-menu h4
+    .dashboard-menu .menu-wrapper
+    {
+        margin-bottom: 40px;
+    }
+    .dashboard-menu .menu-wrapper h4
     {
         color: #3490dc;
+        margin-bottom: 18px;
+    }
+    .dashboard-menu .menu-wrapper .flex
+    {
+        width: 100%;
+        height: 360px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+        overflow-x: auto;
+    }
+    .dashboard-menu .menu-wrapper .flex .card
+    {
+        width: 200px;
+        padding: 20px;
+    }
+    .dashboard-menu .menu-wrapper .flex .card h5
+    {
+        font-size: 20px;
+        text-align: center;
+    }
+    .dashboard-menu .menu-wrapper .flex .card img
+    {
+        width: 160px;
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+        margin: 14px 0;
+    }
+    .dashboard-menu .menu-wrapper .flex .card p
+    {
+        margin-bottom: 8px;
+    }
+    .dashboard-menu .menu-wrapper .flex .card p.nama-kantin
+    {
+        color: #3490dc;
+    }
+    .dashboard-menu .menu-wrapper .flex .card p:last-child
+    {
+        margin-bottom: unset;
     }
 </style>
 
@@ -148,21 +194,101 @@
 
 <!-- Dashboard Menu -->
 <div class="dashboard-menu">
-    <div class="card col-sm-4 col-6">
+    <div class="menu-wrapper">
         <h4>Menu Terbaru</h4>
-        <p>Telur Gulung</p>
-        <img src="{{asset('img/egg.png')}}">
-        <p>Kantin Bapak</p>
-        <p>Harga: Rp5.000</p>
-        <p>Total: 20 Pesanan</p>
+        <div class="flex">
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+        </div>
     </div>
 
-    <h4>Menu Terbaru</h4>
-    <p>Telur Gulung</p>
-    <p>- Gambar</p>
-    <p>Kantin Bapak</p>
-    <p>Harga: Rp5.000</p>
-    <p>Total: 20 Pesanan</p>
+    <div class="menu-wrapper">
+        <h4>Menu Terlaris</h4>
+        <div class="flex">
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+            <div class="card">
+                <h5>Telur Gulung</h5>
+                <img src="{{asset('img/egg.png')}}">
+                <p class="nama-kantin">Kantin Bapak</p>
+                <p>Harga: Rp5.000</p>
+                <p>Total: 20 Pesanan</p>
+            </div>
+        </div>
+    </div>
 
     <h4>Jumlah User Order</h4>
     <p>120 Orang</p>
