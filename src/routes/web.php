@@ -39,9 +39,11 @@ Route::prefix('panel')->middleware('auth')->name('panel.')->group(function(){
     Route::get('Wallet/{user}',[WalletController::class,'setup'])->name('wallet.setup');
     // Canteen 
     Route::get('Canteen',[CanteenController::class,'index'])->name('canteen');
-    Route::post('Canteen/{user}',[CanteenController::class,'setup'])->name('canteen.setup');
+    Route::get('Canteen/detail/{order}',[CanteenController::class,'detail'])->name('canteen.detail');
+    Route::post('Canteen/detail/{order}',[CanteenController::class,'cancel'])->name("canteen.cancel");
     Route::post('Canteen/add/{user}',[CanteenController::class,'store'])->name('canteen.add');
     Route::get('Canteen/explore',[CanteenController::class,'explore'])->name('canteen.explore');
+    Route::post('Canteen/{user}',[CanteenController::class,'setup'])->name('canteen.setup');
     //    Route::get('Canteen/orders',[CanteenController::class,'order'])->name('canteen.order');
     Route::get('Canteen/{canteen}',[CanteenController::class,'show'])->name('canteen.show');
     Route::post('Canteen',[CanteenController::class,'beli'])->name('canteen.beli');

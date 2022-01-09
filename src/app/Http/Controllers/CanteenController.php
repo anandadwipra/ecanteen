@@ -29,6 +29,23 @@ class CanteenController extends Controller
             return view('panel.canteen.index',compact(['title','food']));
         }
     }
+    public function detail(Order $order)
+    {
+        $list=[];
+        $list1=explode(',',$order->food_list);
+        unset($list1[0]); 
+        $count=array_count_values($list1);
+        $list1=array_unique($list1);
+        foreach($list1 as $ls){
+            array_push($list,Food::find($ls));
+        }
+//        dd($list);
+        return view('panel.canteen.detail',compact('order','list','count')) ;
+    }
+    public function cancel(Order $order){
+        $order->delete();
+       return redirect()->route('panel.canteen') ;
+    }
     public function beli(Request $request)
     {
         $canteen=Canteen::find($request->canteen_id)->user->wallet;
@@ -57,7 +74,7 @@ class CanteenController extends Controller
         return redirect()->route('panel.canteen.explore');
     }
     public function order(){
-        return Order::join('users', 'orders.user_id', '=', 'users.id')->join('wallets', 'orders.user_id', '=', 'wallets.user_id')->select('orders.*','users.full_name','wallets.*')->get();
+        return Order::join('users', 'orders.user_id', '=', 'users.id')->join('wallets', 'orders.user_id', '=', 'wallets.user_id')->select('orders.*','users.full_name','wallets.address','wallets.user_id','wallets.balance')->get();
         // return Order::all();
     }
     /**

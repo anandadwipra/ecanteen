@@ -153,7 +153,7 @@
                                 <th scope="col">Wallet Address</th>
                                 <th scope="col">Pay</th>
                                 {{-- <th scope="col">Last Login</th> --}}
-                                <th scope="col">Modify</th>
+                                <th scope="col">Detail</th>
                             </tr>
                         </thead>
                         <tbody id="contentTable">
@@ -270,7 +270,22 @@
                 myTh.innerText = "Belum Lunas";
             }
             myTr.appendChild(myTh);
-            div.appendChild(myTr);
+
+            myTh = document.createElement("td");	
+            let button = document.createElement("a");
+            button.classList.add("btn");
+            button.classList.add("btn-info");
+            button.setAttribute("role", "button");
+            let url_sementara= "/panel/Canteen/detail/" + element["id"];
+            button.setAttribute("href", url_sementara);
+            button.innerText = "Detail";
+
+
+
+            myTh.appendChild(button);		
+            myTr.appendChild(myTh)           
+    
+                div.appendChild(myTr);
         });
         table.innerHTML=div.outerHTML;
         }
