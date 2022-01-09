@@ -4,11 +4,15 @@
         height: calc(100% - 74px);
         overflow-x: hidden;
         overflow-y: auto;
-        padding: 0 23px 60px;
+        padding: 8px 23px;
     }
     .dashboard-menu .menu-wrapper
     {
         margin-bottom: 40px;
+    }
+    .dashboard-menu .menu-wrapper:last-child
+    {
+        margin-bottom: unset;
     }
     .dashboard-menu h4
     {
