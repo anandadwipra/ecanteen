@@ -6,6 +6,10 @@
         overflow-y: auto;
         padding: 8px 23px;
     }
+    .dashboard-menu::-webkit-scrollbar
+    {
+     display: none;
+    }
     .dashboard-menu .menu-wrapper
     {
         margin-bottom: 40px;
@@ -64,6 +68,7 @@
 
 @extends('layouts.admin-lte')
 @section('css')
+
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endsection
 @section('content')
