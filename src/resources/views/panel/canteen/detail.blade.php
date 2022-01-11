@@ -1,8 +1,16 @@
 @extends('layouts.admin-lte')
 @section('css')
+<style type="text/css">
+    .detail-wrapper
+    {
+        padding: 23px;
+    }
+</style>
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endsection
 @section('content')
+
+<div class="detail-wrapper">
 
     User id : {{$order->user_id}}<br>
     Canten id : {{$order->canteen_id}}<br>
@@ -15,8 +23,6 @@
         <hr>
     @endforeach
 
-    
-
     Total Belanja : {{$order->total}}<br>
     Pembayaran: {{$order->payment}}<br>
     @if($order->payment==0)
@@ -28,5 +34,6 @@
     @else
         <button class="btn btn-dark">Batalkan Pesanan</button>
     @endif
+</div>
 
 @endsection
