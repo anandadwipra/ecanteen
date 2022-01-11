@@ -5,6 +5,10 @@
     {
         padding: 23px;
     }
+    .detail-wrapper .card h4
+    {
+        text-align: center;
+    }
 </style>
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endsection
@@ -12,19 +16,30 @@
 
 <div class="detail-wrapper">
 
-    User id : {{$order->user_id}}<br>
-    Canten id : {{$order->canteen_id}}<br>
-    List Food : <br>
-    
+    <h5>User ID: {{$order->user_id}}</h5>
+    <h5>Canteen ID: {{$order->canteen_id}}</h5>
+    <h5>List Food:</h5>
+    <hr>
+
+    <!--
     @foreach($list as $ls)
-        Name : {{$ls->name}} <br>
+        Name: {{$ls->name}} <br>
         Image: {{$ls->image}}<br>
         Jumlah: {{$count[$ls->id]}}
         <hr>
     @endforeach
 
     Total Belanja : {{$order->total}}<br>
-    Pembayaran: {{$order->payment}}<br>
+    Pembayaran: {{$order->payment}}<br> -->
+
+    <div class="card col-6 col-lg-4">
+        <h4>Bakso</h4>
+        <h6>Jumlah Pesanan: 2</h6>
+        <br>
+        <h6>Total Belanja: Rp5.000</h6>
+        <h6>Pembayaran: 0</h6>
+    </div>
+
     @if($order->payment==0)
         <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
         @csrf
