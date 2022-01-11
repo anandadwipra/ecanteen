@@ -5,6 +5,14 @@
     {
         padding: 23px;
     }
+    .detail-wrapper h4
+    {
+        color: #3490dc;
+    }
+    .detail-wrapper h3
+    {
+        margin-bottom: 24px;
+    }
     .detail-wrapper .card-wrapper
     {
         display: grid;
@@ -15,9 +23,17 @@
     {
         text-align: center;
     }
-    .detail-wrapper .card-wrapper .card img
+    .detail-wrapper .card-wrapper .card img,
+    .detail-wrapper .card-wrapper .card div
     {
         margin: 8px 0;   
+    }
+    .detail-wrapper .card-wrapper .card div
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 </style>
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -25,11 +41,10 @@
 @section('content')
 
 <div class="detail-wrapper">
-
-    <h5>User ID: {{$order->user_id}}</h5>
-    <h5>Canteen ID: {{$order->canteen_id}}</h5>
-    <h5>List Food:</h5>
+    <h4>User ID: {{$order->user_id}}</h4>
+    <h4>Canteen ID: {{$order->canteen_id}}</h4>
     <hr>
+    <h3>List Order:</h3>
 
     <!--
     @foreach($list as $ls)
@@ -49,6 +64,17 @@
             <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
+            <div>
+                @if($order->payment==0)
+                    <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
+                    @csrf
+                    <input type="text" value="Maaf Pesanan habis" hidden></input>
+                    <button href="" class="btn btn-info" >Batalkan Pesanan</button>
+                    </form>
+                @else
+                    <button class="btn btn-dark">Batalkan Pesanan</button>
+                @endif
+            </div>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
@@ -56,6 +82,17 @@
             <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
+            <div>
+                @if($order->payment==0)
+                    <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
+                    @csrf
+                    <input type="text" value="Maaf Pesanan habis" hidden></input>
+                    <button href="" class="btn btn-info" >Batalkan Pesanan</button>
+                    </form>
+                @else
+                    <button class="btn btn-dark">Batalkan Pesanan</button>
+                @endif
+            </div>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
@@ -63,6 +100,17 @@
             <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
+            <div>
+                @if($order->payment==0)
+                    <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
+                    @csrf
+                    <input type="text" value="Maaf Pesanan habis" hidden></input>
+                    <button href="" class="btn btn-info" >Batalkan Pesanan</button>
+                    </form>
+                @else
+                    <button class="btn btn-dark">Batalkan Pesanan</button>
+                @endif
+            </div>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
@@ -70,6 +118,17 @@
             <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
+            <div>
+                @if($order->payment==0)
+                    <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
+                    @csrf
+                    <input type="text" value="Maaf Pesanan habis" hidden></input>
+                    <button href="" class="btn btn-info" >Batalkan Pesanan</button>
+                    </form>
+                @else
+                    <button class="btn btn-dark">Batalkan Pesanan</button>
+                @endif
+            </div>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
@@ -77,6 +136,17 @@
             <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
+            <div>
+                @if($order->payment==0)
+                    <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
+                    @csrf
+                    <input type="text" value="Maaf Pesanan habis" hidden></input>
+                    <button href="" class="btn btn-info" >Batalkan Pesanan</button>
+                    </form>
+                @else
+                    <button class="btn btn-dark">Batalkan Pesanan</button>
+                @endif
+            </div>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
@@ -84,18 +154,19 @@
             <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
+            <div>
+                @if($order->payment==0)
+                    <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
+                    @csrf
+                    <input type="text" value="Maaf Pesanan habis" hidden></input>
+                    <button href="" class="btn btn-info" >Batalkan Pesanan</button>
+                    </form>
+                @else
+                    <button class="btn btn-dark">Batalkan Pesanan</button>
+                @endif
+            </div>
         </div>
     </div>
-
-    @if($order->payment==0)
-        <form method="post" action="{{route('panel.canteen.cancel',$order->id)}}">
-        @csrf
-        <input type="text" value="Maaf Pesanan habis" hidden></input>
-        <button href="" class="btn btn-info" >Batalkan Pesanan</button>
-        </form>
-    @else
-        <button class="btn btn-dark">Batalkan Pesanan</button>
-    @endif
 </div>
 
 @endsection
