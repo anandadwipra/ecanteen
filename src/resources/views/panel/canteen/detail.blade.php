@@ -11,10 +11,6 @@
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 20px;
     }
-    .detail-wrapper .card-wrapper .card
-    {
-        
-    }
     .detail-wrapper .card-wrapper .card h4
     {
         text-align: center;
@@ -43,35 +39,35 @@
     Pembayaran: {{$order->payment}}<br> -->
 
     <div class="card-wrapper">
-        <div class="card">
+        <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
             <br>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
-        <div class="card">
+        <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
             <br>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
-        <div class="card">
+        <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
             <br>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
-        <div class="card">
+        <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
             <br>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
-        <div class="card">
+        <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
             <br>
