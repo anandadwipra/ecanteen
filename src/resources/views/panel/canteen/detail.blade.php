@@ -41,36 +41,36 @@
     <div class="card-wrapper">
         <div class="card p-3">
             <h4>Telur Gulung</h4>
-            <h6>Jumlah Pesanan: 2</h6>
             <img src="{{asset('img/egg.png')}}">
+            <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
-            <h6>Jumlah Pesanan: 2</h6>
             <img src="{{asset('img/egg.png')}}">
+            <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
-            <h6>Jumlah Pesanan: 2</h6>
             <img src="{{asset('img/egg.png')}}">
+            <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
-            <h6>Jumlah Pesanan: 2</h6>
             <img src="{{asset('img/egg.png')}}">
+            <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
-            <h6>Jumlah Pesanan: 2</h6>
             <img src="{{asset('img/egg.png')}}">
+            <h6>Jumlah Pesanan: 2</h6>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
