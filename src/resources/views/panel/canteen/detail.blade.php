@@ -9,6 +9,10 @@
     {
         text-align: center;
     }
+    .detail-wrapper .row
+    {
+        gap: 20px;
+    }
 </style>
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endsection
@@ -32,12 +36,21 @@
     Total Belanja : {{$order->total}}<br>
     Pembayaran: {{$order->payment}}<br> -->
 
-    <div class="card col-6 col-lg-4">
-        <h4>Bakso</h4>
-        <h6>Jumlah Pesanan: 2</h6>
-        <br>
-        <h6>Total Belanja: Rp5.000</h6>
-        <h6>Pembayaran: 0</h6>
+    <div class="row">
+        <div class="card col-6 col-sm-4 col-lg-3">
+            <h4>Bakso</h4>
+            <h6>Jumlah Pesanan: 2</h6>
+            <br>
+            <h6>Total Belanja: Rp5.000</h6>
+            <h6>Pembayaran: 0</h6>
+        </div>
+        <div class="card col-6 col-sm-4 col-lg-3">
+            <h4>Bakso</h4>
+            <h6>Jumlah Pesanan: 2</h6>
+            <br>
+            <h6>Total Belanja: Rp5.000</h6>
+            <h6>Pembayaran: 0</h6>
+        </div>
     </div>
 
     @if($order->payment==0)
