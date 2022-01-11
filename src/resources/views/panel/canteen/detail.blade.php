@@ -35,6 +35,30 @@
         justify-content: center;
         align-items: center;
     }
+
+    @media (max-width: 1267px)
+    {
+        .detail-wrapper .card-wrapper
+        {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 827px)
+    {
+        .detail-wrapper .card-wrapper
+        {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 427px)
+    {
+        .detail-wrapper .card-wrapper
+        {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endsection
