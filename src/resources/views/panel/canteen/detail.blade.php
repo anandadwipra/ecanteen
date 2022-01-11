@@ -42,35 +42,35 @@
         <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
-            <br>
+            <img src="{{asset('img/egg.png')}}">
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
-            <br>
+            <img src="{{asset('img/egg.png')}}">
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
-            <br>
+            <img src="{{asset('img/egg.png')}}">
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
-            <br>
+            <img src="{{asset('img/egg.png')}}">
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
         <div class="card p-3">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
-            <br>
+            <img src="{{asset('img/egg.png')}}">
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
