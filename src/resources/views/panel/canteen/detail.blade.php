@@ -5,13 +5,19 @@
     {
         padding: 23px;
     }
-    .detail-wrapper .card h4
+    .detail-wrapper .card-wrapper
+    {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+    .detail-wrapper .card-wrapper .card
+    {
+        
+    }
+    .detail-wrapper .card-wrapper .card h4
     {
         text-align: center;
-    }
-    .detail-wrapper .row
-    {
-        gap: 20px;
     }
 </style>
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -36,15 +42,36 @@
     Total Belanja : {{$order->total}}<br>
     Pembayaran: {{$order->payment}}<br> -->
 
-    <div class="row">
-        <div class="card col-6 col-sm-4 col-lg-3">
+    <div class="card-wrapper">
+        <div class="card">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
             <br>
             <h6>Total Belanja: Rp5.000</h6>
             <h6>Pembayaran: 0</h6>
         </div>
-        <div class="card col-6 col-sm-4 col-lg-3">
+        <div class="card">
+            <h4>Bakso</h4>
+            <h6>Jumlah Pesanan: 2</h6>
+            <br>
+            <h6>Total Belanja: Rp5.000</h6>
+            <h6>Pembayaran: 0</h6>
+        </div>
+        <div class="card">
+            <h4>Bakso</h4>
+            <h6>Jumlah Pesanan: 2</h6>
+            <br>
+            <h6>Total Belanja: Rp5.000</h6>
+            <h6>Pembayaran: 0</h6>
+        </div>
+        <div class="card">
+            <h4>Bakso</h4>
+            <h6>Jumlah Pesanan: 2</h6>
+            <br>
+            <h6>Total Belanja: Rp5.000</h6>
+            <h6>Pembayaran: 0</h6>
+        </div>
+        <div class="card">
             <h4>Bakso</h4>
             <h6>Jumlah Pesanan: 2</h6>
             <br>
