@@ -15,6 +15,10 @@
     {
         text-align: center;
     }
+    .detail-wrapper .card-wrapper .card img
+    {
+        margin: 8px 0;   
+    }
 </style>
 <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 @endsection
@@ -39,6 +43,13 @@
     Pembayaran: {{$order->payment}}<br> -->
 
     <div class="card-wrapper">
+        <div class="card p-3">
+            <h4>Telur Gulung</h4>
+            <img src="{{asset('img/egg.png')}}">
+            <h6>Jumlah Pesanan: 2</h6>
+            <h6>Total Belanja: Rp5.000</h6>
+            <h6>Pembayaran: 0</h6>
+        </div>
         <div class="card p-3">
             <h4>Telur Gulung</h4>
             <img src="{{asset('img/egg.png')}}">
