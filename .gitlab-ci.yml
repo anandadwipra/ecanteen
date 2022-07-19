@@ -1,0 +1,10 @@
+stages:
+  - test
+
+test:
+  image: alpine:latest
+  stage: test
+  before_script:
+    - apk update && apk add rsync
+  script:
+    - echo a
